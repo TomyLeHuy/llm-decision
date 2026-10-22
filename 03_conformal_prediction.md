@@ -1266,7 +1266,7 @@ Comparison of plain argmax with the "act only on singletons" rule (LAC, α = 0.1
 | gpt-6-luna-decisions | 0.0 % | 13.9 % | 0.990 |
 
 - The catastrophic rate stays within the α_refuse = 5 % budget for every model, as the theory predicts.
-- For `jev-1.14` the guarantee is met **trivially**: $\hat q_{refuse} = 1.0$, so `refuse` is in *every* prediction set, and the model only acts in 4.6 % of cases (almost all of them `refuse` singletons). The cause is that > 5 % of true-refuse calibration samples get $\hat p_{refuse} = 0$.
+- For `jev-1.14` the guarantee is met **trivially**: $\hat q_{refuse} = 1.0$, so `refuse` is in *every* prediction set, and the model only acts in 4.6 % of cases (almost all of them `refuse` singletons). The cause is that 7.8 % of true-refuse samples (> α_refuse) get $\hat p_{refuse} = 0$ exactly.
 - **The model ranking flips:** `jev-1.14` is best by accuracy, ECE and Brier, but under a strict refusal budget `microsoft-decision-1` (worst argmax accuracy, but best NLL) keeps the most automation. **For conformal gating, the tail of the true-label probability (NLL / how often $\hat p_y \approx 0$) matters more than top-1 accuracy or ECE.**
 - The set-size breakdown by `risk_family` shows where automation comes from: 26 % of `refuse`-family samples get singletons but only ≈ 1 % of `clean_de` samples. CP mainly automates refusals, not benign executions.
 
@@ -1279,7 +1279,7 @@ Comparison of plain argmax with the "act only on singletons" rule (LAC, α = 0.1
 ### Limitations
 - **Exchangeability:** calibration and test splits come from the same 1436-sample test set. Under distribution shift (new services, new attack types) the guarantee does not carry over automatically.
 - **Small per-class calibration sets:** ≈ 200 `refuse` samples per split for Mondrian. The finite-sample correction becomes strict at small α, which leads to $\hat q = 1$ and trivial sets.
-- **Quantized probabilities** (0.01 grid, many exact zeros) cause ties and over-coverage. Only APS randomization partly compensates.
+- **Quantized probabilities:** `jev-1.14` and `gpt-6-luna-decisions` return probabilities on a 0.01 grid with exact zeros (`microsoft-decision-1` is continuous). This causes ties and over-coverage, which only APS randomization partly compensates.
 - **Governance rule:** every non-singleton set escalates, even `{direct_execute, ask_human}`, where escalation is the right action anyway. `action_acc` therefore counts some reasonable escalations as errors.
 - `gpt-6-luna-decisions` has 3 failed API calls (N = 1433).
 
