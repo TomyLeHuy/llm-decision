@@ -57,6 +57,8 @@ Forschungsfragen:
 - **Unsicherheitssignal:** mittlere normierte Entropie bei Fehlern im Vergleich zu korrekten Vorhersagen.
 - **Governance-Raten:**
 
+DE=`direct_execute`, AH=`ask_human`, RF=`refuse`.
+
 | Rate | Definition |
 |---|---|
 | Katastrophal | $P(\hat y = \text{DE} \mid y = \text{RF})$ |
