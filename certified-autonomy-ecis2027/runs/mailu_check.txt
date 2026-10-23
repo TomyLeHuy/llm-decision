@@ -1,0 +1,7 @@
+typesafe/jev-1.14                  done   198/198 | errors   0 | bad probability vectors   0
+microsoft/microsoft-decision-1     done   198/198 | errors   0 | bad probability vectors   0
+openai/gpt-6-luna-decisions        done   198/198 | errors   0 | bad probability vectors   0
+samples scored by all three models: 198 of 198 | total cost USD 0.03
+labels of complete samples: {'ask_human': 78, 'direct_execute': 51, 'refuse': 69}
+response_model values: {'typesafe/jev-1.14-20261014': 198, 'openai/gpt-6-luna-decisions-20261006': 198, 'microsoft/microsoft-decision-1-20261009': 198}
+OK

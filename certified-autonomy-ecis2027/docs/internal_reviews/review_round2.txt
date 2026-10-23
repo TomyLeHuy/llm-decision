@@ -1,0 +1,268 @@
+Review of Revised Paper
+
+Statistically Certified Autonomy: Design Principles for Risk-Bounded Delegation to AI Agents
+
+Overall Assessment
+
+The revised manuscript is substantially stronger than the previous version. Most of the earlier conceptual and methodological concerns have been addressed. In particular, the introduction of the integrated G5 variant, the distinction between two certifiability floors, the more explicit certification procedure, the expanded cost analysis, and the stronger delegation-theory framing significantly improve the paper.
+
+The paper now has a coherent contribution around risk-bounded organizational delegation to AI agents, rather than appearing primarily as an application of conformal prediction.
+
+The remaining issues are narrower and mostly concern external validation, methodological clarity, and the strength of some design-principle formulations.
+
+Overall assessment: approximately 87/100 — Accept / Weak Accept to Accept.
+
+---
+
+Major Remaining Issues
+
+1. Independent confirmatory evaluation remains the main weakness
+
+The manuscript now transparently distinguishes:
+
+- development evidence,
+- internal evaluation,
+- and generalisation evidence.
+
+This is a significant improvement.
+
+However, the design principles and gate variants were still developed and evaluated using the same 1,433 calls. Repeated calibration-test splits provide strong internal evidence, but they do not constitute an independent confirmatory evaluation of the frozen artifact.
+
+The manuscript explicitly acknowledges this and notes that confirmatory evaluation remains pending.
+
+Recommendation
+
+If feasible before submission, add at least one evaluation using untouched data after freezing all design choices.
+
+The most straightforward option appears to be the existing SAFETY SENTRY training and/or out-of-distribution split.
+
+An even stronger option would be an independent policy-oriented agent benchmark such as τ²-bench, but this is not strictly necessary for ECIS if the untouched SAFETY SENTRY data can already provide a clean confirmatory test.
+
+Even one compact table reporting the frozen G4/G5 performance on untouched data would substantially strengthen the paper.
+
+If no additional experiment is possible, retain the current transparent limitation and avoid making broad claims of generality.
+
+---
+
+2. The interaction between the global ask guarantee and service-specific G5 thresholds should be explained more clearly
+
+The new G5 variant solves an important weakness of the previous manuscript by combining:
+
+- service-conditional harm certification, and
+- high-confidence certification.
+
+This is an important improvement.
+
+However, the description of how the global ask-risk constraint interacts with the service-specific \lambda_r thresholds is difficult to follow.
+
+The current explanation states that the ask risk is tested globally and the service-specific refusal thresholds are capped accordingly. The logic appears reasonable, but a statistically oriented reviewer may need to reconstruct why different service-specific thresholds cannot invalidate the global ask guarantee.
+
+Recommendation
+
+Explain the procedure more sequentially, for example:
+
+1. For each candidate \lambda_a, certify the global ask-risk constraint.
+2. Determine the largest refusal-threshold region compatible with this certified ask constraint.
+3. Within this admissible region, certify a separate refusal threshold for each service group.
+4. Services without sufficient evidence receive no autonomous-execution region.
+5. Apply multiplicity correction across the global ask test and all service-level harm tests.
+
+A short sentence explicitly stating why service-specific threshold selection cannot invalidate the already certified ask guarantee would improve auditability.
+
+---
+
+3. DP3 should be formulated more conditionally
+
+The evidence on vendor combination is much stronger in the revised version because the paper now measures dependence and overlap rather than referring to the vendors as statistically independent.
+
+This is good.
+
+However, the design principle still risks sounding somewhat universal:
+
+«Combine decision models from different vendors whose confident errors are sufficiently diverse.»
+
+The empirical study evaluates one particular combination mechanism—averaging probability vectors—and one set of three decision models.
+
+The evidence therefore supports the benefit of combination when error diversity is empirically demonstrated, but not a general claim that organizations should always combine vendors.
+
+Recommendation
+
+Consider wording DP3 more conditionally:
+
+«When decision models exhibit sufficiently diverse critical errors, combine their outputs before calibration and verify that the combination lowers the certifiability floor; inspect services separately for shared blind spots.»
+
+This formulation follows the empirical evidence more closely.
+
+---
+
+4. The G5 sample-size result should be framed explicitly as a contribution, not as a failure of the method
+
+G5 executes nothing with the standard 50% calibration split because none of the service groups has enough refusals to satisfy the simultaneous high-confidence certification requirement.
+
+This might initially look disappointing to a reviewer.
+
+However, it is actually one of the paper's most useful organizational findings:
+
+«Fine-grained statistical guarantees require substantial labelled histories for each organizational unit to which the guarantee applies.»
+
+At 90% calibration, G5 becomes useful for the sufficiently populated service group and achieves greater autonomy than G4 there.
+
+Recommendation
+
+Make the interpretation particularly explicit:
+
+«The failure to certify low-volume services is not an implementation failure but an observable limit imposed by the requested risk budget, confidence level, multiplicity correction, and available labelled history.»
+
+This strengthens the managerial message that granularity of governance has a data cost.
+
+This could even be emphasized as a central finding:
+
+«More granular delegation boundaries improve local risk control but increase the labelled-data requirement for certification.»
+
+---
+
+5. The two certifiability floors are now one of the strongest contributions and could be emphasized more
+
+The revised distinction between:
+
+- score-resolution floor, and
+- policy-family floor
+
+substantially improves the conceptual coherence of the manuscript.
+
+The score-resolution floor explains why a model can become unusable under a simple single-score gate when too many critical cases receive the minimum expressible probability.
+
+The policy-family floor explains why richer policies can sometimes escape this problem, while still facing fundamental limits determined by the policy family, budget, confidence level, and calibration sample.
+
+This also resolves the earlier apparent contradiction that Jev performs poorly under G1 but becomes certifiable under G4.
+
+Recommendation
+
+Consider giving the two floors slightly greater prominence in:
+
+- the abstract,
+- contribution summary,
+- and conclusion.
+
+They may constitute the manuscript's most distinctive technical contribution.
+
+The contribution could be summarized as:
+
+«Organizations must assess not only predictive accuracy but whether a decision model and the policy family consuming its outputs are statistically certifiable under the organization's risk budget and available labelled data.»
+
+---
+
+Minor / Presentation Issues
+
+6. Clearly distinguish “expected cost optimization” from “cost certification”
+
+The revised cost analysis is considerably stronger and now reports:
+
+- safe autonomy,
+- human-review workload,
+- wrongful blocking,
+- and expected organizational cost.
+
+The manuscript also correctly notes that certification guarantees the risk constraints, not the expected cost.
+
+This distinction is important and should remain highly visible.
+
+Recommendation
+
+Ensure that phrases such as “cost-aware certified policy” cannot be interpreted as meaning that expected cost itself is statistically certified.
+
+The policy is:
+
+«statistically certified with respect to the risk constraints and selected according to estimated organizational cost.»
+
+That wording is maximally precise.
+
+---
+
+7. Preserve the cautious AI Act wording
+
+The revised manuscript appropriately states that the gate can provide auditable evidence supporting human-oversight mechanisms but does not itself establish regulatory compliance.
+
+This wording is appropriate and should be retained.
+
+Avoid stronger formulations elsewhere in the manuscript suggesting that statistical certification equals AI Act compliance.
+
+---
+
+8. Preserve the revised interpretation of the 36% result
+
+The manuscript now correctly explains that the observed violations occur across repeated calibration-test splits of one dataset, not across independent real-world deployments.
+
+This correction is important.
+
+The formulation should consistently remain:
+
+«“up to 36% of repeated calibration-test splits/samples exceed the budget”»
+
+rather than:
+
+«“36% of deployments violate the guarantee.”»
+
+---
+
+9. The IS contribution is now substantially stronger
+
+The new theoretical framing around the delegation boundary works well.
+
+The manuscript now conceptualizes delegation in agentic information systems as:
+
+- action-level rather than task-level,
+- dynamic rather than fixed,
+- mediated by another machine,
+- bounded by organizational risk preferences,
+- and recalibrated as the agent's scope changes.
+
+This should remain the central IS contribution.
+
+The strongest conceptual statement is that the delegation gate is not merely a classifier but an organizational mechanism that defines and enforces the boundary of machine autonomy under uncertainty.
+
+This framing differentiates the paper from a purely machine-learning contribution and should be maintained throughout the abstract, introduction, design principles, and discussion.
+
+---
+
+Suggested Priority Before Submission
+
+Priority 1 — Highest value
+
+Add an untouched confirmatory evaluation if feasible.
+
+Priority 2
+
+Clarify the statistical logic of G5, particularly the relationship between global ask certification and service-specific harm certification.
+
+Priority 3
+
+Make DP3 conditional on empirically demonstrated error diversity rather than recommending vendor combination universally.
+
+Priority 4
+
+Strengthen the interpretation of the G5 sample-size result as a finding about the data cost of granular governance.
+
+Priority 5
+
+Give the two certifiability floors slightly greater prominence as a core contribution.
+
+---
+
+Final Assessment
+
+The revised paper is substantially more convincing than the previous version.
+
+The strongest elements are now:
+
+1. the conceptualization of agent autonomy as a dynamic, risk-bounded delegation boundary;
+2. the distinction between score-resolution and policy-family certifiability floors;
+3. the integrated service-conditional and high-confidence G5 gate;
+4. the explicit quantification of the trade-off between autonomy, confidence, human review, organizational cost, and labelled-data requirements;
+5. and the translation of these findings into actionable design principles for organizational deployment.
+
+The main remaining limitation is the absence of a genuinely independent confirmatory evaluation of the frozen artifact.
+
+Current recommendation: Accept / Weak Accept to Accept (approximately 87/100).
+
+With an untouched confirmatory experiment and a small clarification of G5, the paper would become considerably harder to challenge on methodological grounds.

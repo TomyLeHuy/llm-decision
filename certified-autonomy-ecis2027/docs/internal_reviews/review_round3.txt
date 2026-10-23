@@ -1,0 +1,324 @@
+Review of Latest Revision
+
+Statistically Certified Autonomy: Design Principles for Risk-Bounded Delegation to AI Agents
+
+Overall Assessment
+
+This version is again substantially improved. The methodological clarification of G5, the conditional formulation of DP3, the stronger framing of the data requirements for granular delegation boundaries, and the increased prominence of the two certifiability floors address almost all substantive concerns raised in the previous review.
+
+On scientific quality, I would currently assess the paper at approximately 89/100 — clear Accept range.
+
+There is, however, one immediate submission-critical issue:
+
+«The current manuscript is 17 pages. ECIS 2027 Completed Research Papers may not exceed 16 pages, all inclusive. This must be fixed before submission.»
+
+The major remaining scientific limitation is the lack of independent confirmatory evaluation on untouched data.
+
+---
+
+1. CRITICAL: Reduce the manuscript from 17 to 16 pages
+
+The current document extends to page 17, with references continuing onto the final page.
+
+ECIS 2027 specifies a maximum of 16 single-spaced pages, all inclusive, including title, figures, tables, references and appendices. Papers exceeding this limit are automatically rejected.
+
+This is therefore more urgent than any scientific revision.
+
+Recommendation
+
+Reduce by at least one full page, preferably slightly more to leave a safety margin after PDF conversion.
+
+I would not remove substantive results. The easiest savings are likely to come from:
+
+- shortening figure captions;
+- compressing Sections 5.9 and 7.2;
+- reducing repeated explanations of the same results;
+- shortening the limitations/future-research discussion;
+- tightening Table 6;
+- reducing vertical whitespace around figures and tables where the template permits;
+- shortening reference formatting only if consistent with the ECIS template.
+
+The new Figure 1 is useful and should preferably remain.
+
+---
+
+2. Independent confirmatory evaluation remains the principal scientific weakness
+
+This concern is still explicitly acknowledged in the paper.
+
+The design was developed and evaluated using the same 1,433 calls, while generalisation evidence is limited to held-out services, output manipulation and repeated resampling. The manuscript correctly states that the confirmatory role is not yet filled.
+
+This is transparent and methodologically responsible, but it remains the most obvious point for a critical reviewer.
+
+Recommendation
+
+If technically feasible before submission, evaluate the frozen final design on untouched data.
+
+The strongest low-effort option appears to be:
+
+«SAFETY SENTRY training split / OOD split → frozen G4/G5 design → no further redesign.»
+
+Even a compact confirmatory table would significantly strengthen the manuscript.
+
+If this cannot be done, the current limitation wording is appropriate and should remain. Avoid any stronger generalisation claims elsewhere.
+
+---
+
+3. G5 certification logic is now sufficiently clear
+
+The previous concern about the interaction between:
+
+- the global ask guarantee, and
+- service-specific refusal thresholds
+
+has now been addressed well.
+
+The new three-step G5 explanation makes the logic explicit:
+
+1. certify the ask risk and determine (\lambda_r^*);
+2. certify each service's harm risk only for thresholds within that certified region;
+3. show that each service-specific execution region is a subset of the ask-certified region, so reducing it cannot increase ask execution.
+
+This is much easier to audit and removes the earlier methodological ambiguity.
+
+Assessment
+
+Resolved. No major further change needed.
+
+The only possible improvement would be to visually separate G5 Steps A–C from the G4 procedure slightly more clearly in Table 1.
+
+---
+
+4. DP3 is now appropriately conditional
+
+DP3 now begins:
+
+«“When decision models show sufficiently diverse critical errors on labelled data…”»
+
+This is much better than universally recommending vendor combination.
+
+It now correctly requires implementers to:
+
+- establish error diversity empirically;
+- combine outputs only under this condition;
+- verify that combination actually lowers the certifiability floor;
+- inspect services for common blind spots.
+
+Assessment
+
+Resolved.
+
+This formulation is now fully consistent with the empirical evidence.
+
+---
+
+5. The G5 sample-size limitation is now correctly framed as a substantive finding
+
+The revised Section 5.6 explicitly explains that failure to certify low-volume services is:
+
+«not an implementation failure, but a consequence of the risk budget, confidence level, multiplicity correction and available labelled history.»
+
+This is an important conceptual improvement.
+
+The paper now derives a clear organizational insight:
+
+«More granular delegation boundaries improve local risk control but require more labelled data to certify.»
+
+This connects the statistical result directly to organizational design.
+
+Recommendation
+
+Preserve this sentence. It is one of the strongest practical insights in the paper.
+
+It could even be repeated briefly in the theoretical contribution because it establishes a general trade-off between:
+
+governance granularity ↔ evidence requirements.
+
+---
+
+6. The two certifiability floors are now sufficiently prominent
+
+The abstract now explicitly states that certifiability is not simply a matter of accuracy and identifies:
+
+- the score-resolution floor, and
+- the policy-family floor.
+
+This is a substantial improvement.
+
+The introduction also clearly states the theoretical implication: organizations should evaluate not only the model's accuracy but whether the model-policy combination can be statistically certified under the available risk budget and labelled data.
+
+Assessment
+
+Resolved and now one of the strongest contributions.
+
+The two-floor distinction should remain central in the abstract, theoretical contributions and conclusion.
+
+---
+
+7. The new Figure 1 improves managerial accessibility
+
+The new organization-level representation of the gate is valuable.
+
+It immediately communicates:
+
+«proposed tool call → decision models → certified gate → execute / human review / block»
+
+and makes the organization's decision variables visible:
+
+- harm budget,
+- confirmation budget,
+- confidence,
+- cost of harm.
+
+This is considerably more accessible than beginning directly with the technical architecture.
+
+Recommendation
+
+Keep Figure 1 despite the page pressure.
+
+If space must be saved, reduce its vertical size slightly rather than deleting it.
+
+---
+
+8. Cost-certification terminology is now precise
+
+The revised wording:
+
+«“a decision policy that is statistically certified for its risks and selected by estimated organisational cost”»
+
+is much better than “certified cost-aware policy.”
+
+It clearly distinguishes:
+
+- risk certification, from
+- cost-based policy selection.
+
+The paper also explicitly states later that certification bounds the risks, not expected cost.
+
+Assessment
+
+Resolved.
+
+---
+
+9. One small wording issue remains in DP5
+
+DP5 currently states approximately:
+
+«“Guarantees on average exceed the budget in up to 36% of repeated calibration samples; a certified policy in at most 2%…”»
+
+The second clause is grammatically incomplete.
+
+Recommendation
+
+Change to:
+
+«“Guarantees that hold only on average exceed the budget in up to 36% of repeated calibration samples; the certified policy exceeds it in at most 2%…”»
+
+or, even more precise:
+
+«“Set-based guarantees exceed at least one budget in up to 36% of repeated calibration-test splits; the certified policy does so in at most 2%.”»
+
+This would also align the terminology with Section 5.7.
+
+---
+
+10. The main theoretical contribution is now convincing for ECIS
+
+The Discussion now presents a coherent IS contribution.
+
+The paper conceptualizes delegation in agentic information systems as a boundary that is:
+
+- drawn per action;
+- dynamically determined;
+- mediated by a purchased decision model;
+- constrained by an organizational risk budget;
+- statistically certified;
+- and redrawn when the scope of the agent changes.
+
+The most compelling theoretical statement remains the shift from viewing the gate as a classifier to viewing it as an:
+
+«accountable organizational delegation boundary whose guarantee is part of its specification.»
+
+This framing should remain central.
+
+Assessment
+
+Strongly improved and now convincing as an IS contribution.
+
+---
+
+11. The limitations section is strong but can be shortened for page savings
+
+The limitations section is methodologically mature. It acknowledges:
+
+- development and internal evaluation on the same data;
+- potentially correlated label/model errors;
+- repeated splits not being independent deployments;
+- service-label confounding;
+- pooling of smaller services;
+- black-box vendor/version instability.
+
+These are exactly the limitations reviewers are likely to identify themselves.
+
+Recommendation
+
+Keep all of these ideas, but compress them. This section is a good candidate for saving approximately 5–7 lines without losing content.
+
+Similarly, Future Research can probably be reduced to 3–4 compact sentences.
+
+---
+
+12. Conclusion is now concise and effective
+
+The revised conclusion successfully summarizes the distinctive result:
+
+«Models should not be judged only by accuracy, but by whether the model together with the policy consuming its outputs can be certified under the organization's budget and available labelled data.»
+
+It also captures the key granularity result:
+
+«finer delegation boundaries require more labelled history.»
+
+Assessment
+
+No substantive revision necessary.
+
+---
+
+Priority Before Submission
+
+Mandatory
+
+1. Reduce the manuscript to ≤16 pages.
+
+Strongly recommended
+
+2. Add an untouched confirmatory evaluation if feasible.
+
+Small final edits
+
+3. Fix the incomplete wording in DP5.
+4. Compress Limitations/Future Research to help solve the page-limit problem.
+5. Proofread table/figure captions and mathematical notation once after the final pagination changes.
+
+---
+
+Updated Assessment
+
+Dimension| Assessment
+Importance / timeliness| 9.5/10
+Research problem| 9.5/10
+Technical rigor| 9/10
+Empirical evidence| 8.5/10
+Novelty| 9/10
+IS theoretical contribution| 9/10
+DSR execution| 8.5/10
+Practical contribution| 9.5/10
+Presentation| 9/10
+Overall scientific quality| 89/100
+
+Recommendation
+
+Accept, subject to the important distinction that the current 17-page document is not submission-ready because it violates the ECIS page limit.
+
+Scientifically, the paper is now considerably harder to criticize than the earlier versions. The remaining substantive vulnerability is external confirmation of the frozen artifact; otherwise, the core story around risk-bounded delegation, two certifiability floors, confidence/autonomy trade-offs, and the labelled-data cost of granular governance is coherent and convincing.

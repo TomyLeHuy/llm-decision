@@ -1,0 +1,248 @@
+Review Comments – Certified Autonomy
+
+Overall, the paper has a strong core idea and a convincing empirical narrative. The main issues are not with the general direction, but with the alignment between the claimed artifact, the statistical guarantees, and the empirical evidence. The following points should be addressed before submission.
+
+Major Issues
+
+1. G3 and G4 are not evaluated jointly
+
+The paper presents service-conditional calibration (G3) and high-confidence certified cost-aware policy selection (G4) as complementary elements of the final design. However, they are evaluated separately.
+
+- G3 addresses heterogeneity across services.
+- G4 provides the high-confidence risk guarantee.
+- The final design principles imply that both should be implemented together.
+
+Currently, there is no experiment showing that the high-confidence G4 guarantee also holds under service-conditional calibration.
+
+Recommendation: Add an integrated variant, e.g. G5: service-conditional certified cost-aware policy, and report its autonomy and certification performance. If the available per-service sample sizes make certification impossible, this is itself an important result and should be explicitly discussed as a sample-complexity limitation.
+
+---
+
+2. “Up to 36% of deployments” is too strong
+
+The paper states that guarantees holding only on average are violated in up to 36% of deployments. Empirically, however, the reported 36% comes from repeated random calibration-test splits of the same corpus.
+
+These splits are not equivalent to independent real-world deployments.
+
+Recommendation: Replace statements such as:
+
+«“broken in up to 36% of deployments”»
+
+with more precise wording such as:
+
+«“the budget is exceeded in up to 36% of repeated calibration-test splits.”»
+
+The managerial interpretation can then explain that this illustrates the risk faced by an organization receiving one particular calibration sample.
+
+---
+
+3. The novelty claim regarding conformal prediction should be softened
+
+The manuscript states that several empirical findings “go beyond the known properties of conformal prediction.” This claim may be challenged.
+
+Class-conditional calibration, conditional/group-specific calibration, and the difference between guarantees in expectation and high-confidence risk control are already known in the conformal prediction literature.
+
+The stronger novelty appears to lie in the organizational operationalization of these ideas for black-box agent delegation.
+
+Recommendation: Reframe the contribution as new design knowledge concerning:
+
+- how conformal guarantees behave in organizational delegation settings,
+- the impact of vendor output resolution,
+- certifiability of black-box decision models,
+- vendor combination,
+- service-level heterogeneity,
+- and the autonomy cost of statistically certified oversight.
+
+This positioning is also stronger for ECIS.
+
+---
+
+4. The “certifiability floor” needs a more precise definition
+
+The paper sometimes describes the certifiability floor as a property of the model and its output format. This is accurate for the G1/G2 construction based directly on the refusal probability.
+
+However, G4 demonstrates that a richer policy using the full probability vector can overcome the apparent floor of a model. For example, jev has almost no autonomy under G1 but substantial autonomy under G4.
+
+This means that general certifiability depends not only on the model but also on the policy family.
+
+Recommendation: Distinguish between:
+
+- a score-resolution floor for single-score/set-based gates such as G1/G2, and
+- a broader policy-family certifiability floor, which depends on the model outputs, policy family, risk budget, confidence level, and calibration sample.
+
+This distinction could strengthen the theoretical contribution considerably.
+
+---
+
+5. G4 needs more methodological detail
+
+The statistical certification procedure for G4 is central to the paper, but its description is currently too compressed to independently verify the claimed guarantee.
+
+In particular, clarify:
+
+- the precise null hypotheses being tested;
+- how the two risks, harmful execution and unconfirmed execution, are jointly certified;
+- how multiplicity is controlled across \lambda_r, \lambda_a, and \tau;
+- how fixed-sequence testing is implemented;
+- how the Bonferroni correction interacts with the different threshold dimensions;
+- whether policy selection by expected cost uses the same calibration data after certification;
+- and why this selection does not invalidate the guarantee.
+
+Recommendation: Add a short algorithm or pseudocode box for G4.
+
+---
+
+6. Development and evaluation rely on the same corpus
+
+The paper explains that the artifact was iteratively developed based on observations from the same dataset:
+
+1. standard conformal prediction revealed class undercoverage;
+2. class conditioning revealed the certifiability floor;
+3. subsequent versions introduced model combination, service calibration, and the certified policy.
+
+The final evaluation is then also performed using repeated splits from this corpus.
+
+This provides good internal evaluation but relatively weak independent confirmation of the resulting design principles.
+
+Recommendation: Clearly distinguish between:
+
+- artifact development evidence,
+- internal evaluation,
+- and confirmatory/generalization evidence.
+
+If possible, use an untouched split, out-of-distribution subset, or another corpus for confirmatory analysis. Otherwise, make the limitation more explicit.
+
+---
+
+7. The Information Systems contribution should be strengthened
+
+The practical problem is clearly an IS problem, but much of the current theoretical contribution is formulated in terms of conformal calibration and statistical properties.
+
+A reviewer may ask why the paper is primarily an Information Systems contribution rather than an ML or AI-safety contribution.
+
+Recommendation: Strengthen the link to delegation theory.
+
+The key conceptual shift is that delegation in agentic systems becomes:
+
+- action-level rather than task-level,
+- dynamic rather than static,
+- machine-mediated,
+- explicitly risk-budgeted,
+- and continuously recalibrated.
+
+The gate can therefore be framed as an organizational mechanism for defining and enforcing delegation boundaries under uncertainty.
+
+The design principles should be linked more explicitly to this theoretical perspective.
+
+---
+
+8. Description of the ground-truth labels should be more precise
+
+The paper sometimes refers to “expert-arbitrated labels.” The methodology, however, states that the labels were initially generated by two language-model annotators, with disagreements arbitrated by the corpus authors, followed by a human audit reporting 92% agreement.
+
+Since all guarantees are defined relative to these labels, their construction is important.
+
+Recommendation: Use a precise description throughout rather than “expert-arbitrated labels,” unless this terminology is directly supported by the underlying corpus documentation.
+
+---
+
+9. The cost-aware contribution is insufficiently evaluated
+
+O5 explicitly requires the artifact to account for the organization's costs of harm, human review, and wrongful blocking. G4 also selects among certified policies using an expected-cost objective.
+
+However, the main results focus mostly on:
+
+- safe autonomy,
+- harmful execution,
+- unconfirmed execution,
+- and budget violations.
+
+The actual organizational cost objective is not prominently evaluated.
+
+Recommendation: Extend the main results with:
+
+- human-review rate,
+- wrongful-blocking rate,
+- total expected cost,
+- and ideally comparison against relevant baseline policies.
+
+A sensitivity analysis showing how different cost assumptions move the optimal certified policy would also make the managerial contribution clearer.
+
+---
+
+10. 90% confidence may be too weak for the “certification” framing
+
+The main G4 analysis uses \delta=0.10, corresponding to 90% confidence.
+
+For a paper emphasizing certified autonomy, safety, and governance, reviewers may question whether 90% constitutes sufficiently high confidence.
+
+Recommendation: Add sensitivity analysis for, for example:
+
+- 90%,
+- 95%,
+- 99%.
+
+This could generate a useful confidence–autonomy–sample-size frontier and further strengthen the practical contribution.
+
+---
+
+Additional Issues
+
+11. Avoid implying statistical independence between vendors
+
+The manuscript recommends combining models from “independent vendors.” Different vendors do not imply statistically independent prediction errors.
+
+The empirical evidence only demonstrates that their confident errors overlap relatively little in this dataset.
+
+Recommendation: Use wording such as:
+
+«“decision models from different vendors whose error patterns are sufficiently diverse”»
+
+and empirically quantify error overlap or dependence.
+
+---
+
+12. Justify the 5% and 15% risk budgets
+
+The evaluation uses:
+
+- 5% harmful-execution budget,
+- 15% unconfirmed-execution budget.
+
+These are reasonable illustrative values, but the paper does not provide a strong rationale for these specific thresholds.
+
+Recommendation: Clarify that they are illustrative organizational risk preferences and provide sensitivity analyses across several budgets.
+
+---
+
+13. Be cautious with the AI Act interpretation
+
+The paper connects the gate to Article 14 of the EU AI Act. This is useful context, but the statistical guarantee does not by itself establish regulatory compliance.
+
+Recommendation: Phrase the contribution more conservatively:
+
+«the gate can provide auditable evidence supporting the implementation and documentation of human-oversight mechanisms.»
+
+Avoid implying that conformal certification itself establishes compliance with Article 14.
+
+---
+
+14. Define what “certification” means
+
+“Certified autonomy” could be interpreted as external, regulatory, or third-party certification.
+
+Here, certification means a statistical guarantee derived from calibration data and hypothesis testing.
+
+Recommendation: Define statistical certification explicitly early in the paper and consistently distinguish it from regulatory or institutional certification.
+
+---
+
+Priority Before Submission
+
+The three most important revisions are:
+
+1. Evaluate G3 and G4 jointly, or explicitly acknowledge that the current artifact does not yet demonstrate simultaneous service-conditional and high-confidence certification.
+2. Tighten the statistical claims, especially the “36% of deployments” statement and the interpretation of the certifiability floor.
+3. Strengthen the IS theoretical contribution by positioning the artifact as a mechanism for dynamic, action-level, risk-bounded organizational delegation rather than primarily as an application of conformal prediction.
+
+The technical core and empirical results are strong. Addressing these issues would substantially improve the defensibility of the contribution and reduce the main likely objections from ECIS reviewers.

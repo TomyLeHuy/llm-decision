@@ -1,0 +1,7 @@
+typesafe/jev-1.14                  done  7767/7767 | errors   0 | bad probability vectors   0
+microsoft/microsoft-decision-1     done  7767/7767 | errors   0 | bad probability vectors   0
+openai/gpt-6-luna-decisions        done  7767/7767 | errors  12 | bad probability vectors   0 | example error: Max retries exceeded: HTTP 502: {"error":{"message":"OpenAI 
+samples scored by all three models: 7755 of 7767 | total cost USD 1.89
+labels of complete samples: {'ask_human': 2022, 'direct_execute': 4023, 'refuse': 1710}
+response_model values: {'openai/gpt-6-luna-decisions-20261006': 7755, 'typesafe/jev-1.14-20261014': 7767, 'microsoft/microsoft-decision-1-20261009': 7767, None: 12}
+OK
