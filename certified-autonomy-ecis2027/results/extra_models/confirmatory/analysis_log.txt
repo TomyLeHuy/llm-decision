@@ -1,0 +1,3 @@
+C3 disjoint: 4 samples done (1 s)
+C3 resample: 100 samples done (12 s)
+done in 12 s -> results/extra_models/confirmatory

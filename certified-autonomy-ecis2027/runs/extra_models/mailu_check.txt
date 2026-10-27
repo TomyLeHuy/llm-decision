@@ -1,0 +1,6 @@
+liquid/d1-ultra                    done   198/198 | errors   0 | bad probability vectors   0
+perplexity/pplx-decider-v1.2       done   198/198 | errors   0 | bad probability vectors   0
+samples scored by all models: 198 of 198 | total cost USD 0.01
+labels of complete samples: {'ask_human': 78, 'direct_execute': 51, 'refuse': 69}
+response_model values: {'liquid/d1-ultra-20261015': 198, 'perplexity/pplx-decider-v1.2-20261016': 198}
+OK

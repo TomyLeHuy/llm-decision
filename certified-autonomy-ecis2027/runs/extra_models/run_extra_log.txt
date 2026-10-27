@@ -1,0 +1,47 @@
+== 0. frozen originals unchanged?
+OK      confirmatory/PROTOCOL.md
+OK      confirmatory/confirm_analysis.py
+OK      confirmatory/score_split.py
+OK      confirmatory/check_run.py
+OK      confirmatory/anchor_ids.json
+OK      confirmatory/make_anchor_ids.py
+OK      confirmatory/verify_frozen.py
+OK      confirmatory/run_confirmatory.sh
+OK      data/scores/test_1436_scores.jsonl
+== 1. check the extra-model runs
+liquid/d1-ultra                    done  1436/1436 | errors   0 | bad probability vectors   0
+perplexity/pplx-decider-v1.2       done  1436/1436 | errors   0 | bad probability vectors   0
+samples scored by all models: 1436 of 1436 | total cost USD 0.11
+labels of complete samples: {'ask_human': 488, 'direct_execute': 540, 'refuse': 408}
+response_model values: {'perplexity/pplx-decider-v1.2-20261016': 1436, 'liquid/d1-ultra-20261015': 1436}
+OK
+liquid/d1-ultra                    done   198/198 | errors   0 | bad probability vectors   0
+perplexity/pplx-decider-v1.2       done   198/198 | errors   0 | bad probability vectors   0
+samples scored by all models: 198 of 198 | total cost USD 0.01
+labels of complete samples: {'ask_human': 78, 'direct_execute': 51, 'refuse': 69}
+response_model values: {'liquid/d1-ultra-20261015': 198, 'perplexity/pplx-decider-v1.2-20261016': 198}
+OK
+liquid/d1-ultra                    done  7767/7767 | errors   0 | bad probability vectors   0
+perplexity/pplx-decider-v1.2       done  7767/7767 | errors   0 | bad probability vectors   0
+samples scored by all models: 7767 of 7767 | total cost USD 0.59
+labels of complete samples: {'ask_human': 2024, 'direct_execute': 4025, 'refuse': 1718}
+response_model values: {'liquid/d1-ultra-20261015': 7767, 'perplexity/pplx-decider-v1.2-20261016': 7767}
+OK
+== 2. combine original and extra scores
+== 3. paper analyses (test split)
+>> /Users/tomyle/Pycharm/DFKI/llm-decisions/.venv/bin/python analysis/01_parse_scores.py runs/extra_models/combined/test_scores.jsonl results/extra_models/scores_test_1436.csv
+>> /Users/tomyle/Pycharm/DFKI/llm-decisions/.venv/bin/python extra_models/analysis/02_conformal_core.py results/extra_models/scores_test_1436.csv results/extra_models/r02_core.json
+>> /Users/tomyle/Pycharm/DFKI/llm-decisions/.venv/bin/python extra_models/analysis/03_policies_and_groups.py results/extra_models/scores_test_1436.csv results/extra_models/r03_policies_groups.json
+>> /Users/tomyle/Pycharm/DFKI/llm-decisions/.venv/bin/python extra_models/analysis/04_calibration_size.py results/extra_models/scores_test_1436.csv results/extra_models/r04_calibration_size.json
+>> /Users/tomyle/Pycharm/DFKI/llm-decisions/.venv/bin/python extra_models/analysis/05_budget_confidence_sensitivity.py results/extra_models/scores_test_1436.csv results/extra_models/r05_sensitivity.json
+>> /Users/tomyle/Pycharm/DFKI/llm-decisions/.venv/bin/python extra_models/analysis/06_revision_g5_costs_frontier.py results/extra_models/scores_test_1436.csv results/extra_models/r06_revision.json
+>> /Users/tomyle/Pycharm/DFKI/llm-decisions/.venv/bin/python extra_models/analysis/07_empty_policy_check.py results/extra_models/scores_test_1436.csv results/extra_models/r07_empty_policy_check.json
+>> /Users/tomyle/Pycharm/DFKI/llm-decisions/.venv/bin/python extra_models/analysis/08_g5_costs_90pct.py results/extra_models/scores_test_1436.csv results/extra_models/r08_g5_costs.json
+>> /Users/tomyle/Pycharm/DFKI/llm-decisions/.venv/bin/python extra_models/analysis/09_scorer_table.py results/extra_models/scores_test_1436.csv results/extra_models/r09_scorer_table.json
+== 4. G4 deployment policies of the extra models (step 04, L2, nine ask thresholds) -> frozen_extra.json
+frozen policies of the extra models: {'liquid': [0.01, 0.2, 0.5], 'pplx': [0.005, 0.05, 0.5]}
+== 5. confirmatory analysis with five models (train, Mailu; no anchor: the extra models have no earlier run)
+C3 disjoint: 4 samples done (1 s)
+C3 resample: 100 samples done (12 s)
+done in 12 s -> results/extra_models/confirmatory
+== done: results/extra_models

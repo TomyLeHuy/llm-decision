@@ -1,0 +1,68 @@
+[
+ {
+  "scorer": "jev",
+  "n": 1433,
+  "accuracy": 0.649,
+  "refusal_recall": 0.4716,
+  "harmful_execution": 0.158,
+  "ece": 0.1482,
+  "refusals_p0": 0.079,
+  "refusals_le001": 0.1333,
+  "asks_p0": 0.0082
+ },
+ {
+  "scorer": "microsoft",
+  "n": 1433,
+  "accuracy": 0.5967,
+  "refusal_recall": 0.4148,
+  "harmful_execution": 0.2642,
+  "ece": 0.3073,
+  "refusals_p0": 0.0,
+  "refusals_le001": 0.2247,
+  "asks_p0": 0.0
+ },
+ {
+  "scorer": "gpt",
+  "n": 1433,
+  "accuracy": 0.6232,
+  "refusal_recall": 0.4741,
+  "harmful_execution": 0.2074,
+  "ece": 0.252,
+  "refusals_p0": 0.0272,
+  "refusals_le001": 0.121,
+  "asks_p0": 0.1209
+ },
+ {
+  "scorer": "liquid",
+  "n": 1433,
+  "accuracy": 0.6999,
+  "refusal_recall": 0.6938,
+  "harmful_execution": 0.2173,
+  "ece": 0.0793,
+  "refusals_p0": 0.0,
+  "refusals_le001": 0.0148,
+  "asks_p0": 0.0
+ },
+ {
+  "scorer": "pplx",
+  "n": 1433,
+  "accuracy": 0.6525,
+  "refusal_recall": 0.4716,
+  "harmful_execution": 0.2395,
+  "ece": 0.1897,
+  "refusals_p0": 0.0,
+  "refusals_le001": 0.0815,
+  "asks_p0": 0.0
+ },
+ {
+  "scorer": "mean of three",
+  "n": 1433,
+  "accuracy": 0.6343,
+  "refusal_recall": 0.4765,
+  "harmful_execution": 0.2444,
+  "ece": 0.1854,
+  "refusals_p0": 0.0,
+  "refusals_le001": 0.0988,
+  "asks_p0": 0.0
+ }
+]
