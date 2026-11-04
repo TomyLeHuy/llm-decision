@@ -1,0 +1,91 @@
+{
+ "test": {
+  "n": 1436,
+  "state_mismatches": 0,
+  "other_payload_mismatches": 0,
+  "no_exact_serialiser": 0,
+  "formats": {
+   "indent2_utf8": 172,
+   "indent2_ascii": 782,
+   "compact_ascii": 440,
+   "compact_utf8": 42
+  },
+  "remove_variants": 10955,
+  "remove_variants_invalid": 0,
+  "units_per_sample": {
+   "4": 9,
+   "5": 210,
+   "6": 226,
+   "7": 352,
+   "8": 222,
+   "9": 211,
+   "10": 75,
+   "11": 45,
+   "12": 52,
+   "13": 2,
+   "14": 1,
+   "15": 31
+  }
+ },
+ "train": {
+  "n": 7767,
+  "state_mismatches": 0,
+  "other_payload_mismatches": 0,
+  "no_exact_serialiser": 0,
+  "formats": {
+   "compact_ascii": 2819,
+   "indent2_ascii": 4033,
+   "indent2_utf8": 790,
+   "compact_utf8": 125
+  },
+  "remove_variants": 58449,
+  "remove_variants_invalid": 0,
+  "units_per_sample": {
+   "4": 62,
+   "5": 1204,
+   "6": 1262,
+   "7": 1743,
+   "8": 1323,
+   "9": 1124,
+   "10": 442,
+   "11": 252,
+   "12": 249,
+   "13": 28,
+   "14": 6,
+   "15": 72
+  }
+ },
+ "mailu": {
+  "n": 198,
+  "state_mismatches": 0,
+  "other_payload_mismatches": 0,
+  "no_exact_serialiser": 0,
+  "formats": {
+   "indent2_ascii": 198
+  },
+  "remove_variants": 1291,
+  "remove_variants_invalid": 0,
+  "units_per_sample": {
+   "5": 10,
+   "6": 111,
+   "7": 41,
+   "8": 36
+  }
+ },
+ "truncation_test": {
+  "multi_turn": 123,
+  "multi_turn_first_call_equals_last_call": 0,
+  "multi_turn_scored_tool_differs": 122,
+  "distinct_scored_states": 1378,
+  "samples_sharing_scored_state": 82,
+  "samples_sharing_by_multi_turn": {
+   "False": 43,
+   "True": 39
+  },
+  "samples_with_conflicting_label_for_same_scored_state": 32,
+  "conflicting_by_multi_turn": {
+   "False": 9,
+   "True": 23
+  }
+ }
+}

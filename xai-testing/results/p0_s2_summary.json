@@ -1,0 +1,294 @@
+{
+ "by_model": [
+  {
+   "model": "gpt",
+   "mad_execute": 0.0,
+   "mad_ask": 0.0,
+   "mad_refuse": 0.0,
+   "max_absdiff": 0.0,
+   "share_exact_same_vector": 1.0,
+   "same_choice": 1.0,
+   "n": 30
+  },
+  {
+   "model": "jev",
+   "mad_execute": 0.0187,
+   "mad_ask": 0.0223,
+   "mad_refuse": 0.011,
+   "max_absdiff": 0.08,
+   "share_exact_same_vector": 0.1333,
+   "same_choice": 1.0,
+   "n": 30
+  },
+  {
+   "model": "liquid",
+   "mad_execute": 0.033,
+   "mad_ask": 0.0325,
+   "mad_refuse": 0.0297,
+   "max_absdiff": 0.1651,
+   "share_exact_same_vector": 0.0,
+   "same_choice": 0.9333,
+   "n": 30
+  },
+  {
+   "model": "microsoft",
+   "mad_execute": 0.1312,
+   "mad_ask": 0.1836,
+   "mad_refuse": 0.0698,
+   "max_absdiff": 0.712,
+   "share_exact_same_vector": 0.0,
+   "same_choice": 0.8333,
+   "n": 30
+  },
+  {
+   "model": "pplx",
+   "mad_execute": 0.0,
+   "mad_ask": 0.0,
+   "mad_refuse": 0.0,
+   "max_absdiff": 0.0,
+   "share_exact_same_vector": 0.7667,
+   "same_choice": 1.0,
+   "n": 30
+  }
+ ],
+ "by_model_multi_turn": [
+  {
+   "model": "gpt",
+   "multi_turn": false,
+   "mad_execute": 0.0,
+   "mad_ask": 0.0,
+   "mad_refuse": 0.0,
+   "max_absdiff": 0.0,
+   "share_exact_same_vector": 1.0,
+   "same_choice": 1.0,
+   "n": 15
+  },
+  {
+   "model": "gpt",
+   "multi_turn": true,
+   "mad_execute": 0.0,
+   "mad_ask": 0.0,
+   "mad_refuse": 0.0,
+   "max_absdiff": 0.0,
+   "share_exact_same_vector": 1.0,
+   "same_choice": 1.0,
+   "n": 15
+  },
+  {
+   "model": "jev",
+   "multi_turn": false,
+   "mad_execute": 0.0173,
+   "mad_ask": 0.0233,
+   "mad_refuse": 0.014,
+   "max_absdiff": 0.08,
+   "share_exact_same_vector": 0.1333,
+   "same_choice": 1.0,
+   "n": 15
+  },
+  {
+   "model": "jev",
+   "multi_turn": true,
+   "mad_execute": 0.02,
+   "mad_ask": 0.0213,
+   "mad_refuse": 0.008,
+   "max_absdiff": 0.06,
+   "share_exact_same_vector": 0.1333,
+   "same_choice": 1.0,
+   "n": 15
+  },
+  {
+   "model": "liquid",
+   "multi_turn": false,
+   "mad_execute": 0.025,
+   "mad_ask": 0.0368,
+   "mad_refuse": 0.0366,
+   "max_absdiff": 0.1651,
+   "share_exact_same_vector": 0.0,
+   "same_choice": 1.0,
+   "n": 15
+  },
+  {
+   "model": "liquid",
+   "multi_turn": true,
+   "mad_execute": 0.0409,
+   "mad_ask": 0.0283,
+   "mad_refuse": 0.0229,
+   "max_absdiff": 0.1481,
+   "share_exact_same_vector": 0.0,
+   "same_choice": 0.8667,
+   "n": 15
+  },
+  {
+   "model": "microsoft",
+   "multi_turn": false,
+   "mad_execute": 0.1248,
+   "mad_ask": 0.2057,
+   "mad_refuse": 0.0856,
+   "max_absdiff": 0.712,
+   "share_exact_same_vector": 0.0,
+   "same_choice": 0.8,
+   "n": 15
+  },
+  {
+   "model": "microsoft",
+   "multi_turn": true,
+   "mad_execute": 0.1377,
+   "mad_ask": 0.1614,
+   "mad_refuse": 0.0541,
+   "max_absdiff": 0.7009,
+   "share_exact_same_vector": 0.0,
+   "same_choice": 0.8667,
+   "n": 15
+  },
+  {
+   "model": "pplx",
+   "multi_turn": false,
+   "mad_execute": 0.0,
+   "mad_ask": 0.0,
+   "mad_refuse": 0.0,
+   "max_absdiff": 0.0,
+   "share_exact_same_vector": 0.9333,
+   "same_choice": 1.0,
+   "n": 15
+  },
+  {
+   "model": "pplx",
+   "multi_turn": true,
+   "mad_execute": 0.0,
+   "mad_ask": 0.0,
+   "mad_refuse": 0.0,
+   "max_absdiff": 0.0,
+   "share_exact_same_vector": 0.6,
+   "same_choice": 1.0,
+   "n": 15
+  }
+ ],
+ "response_models": {
+  "gpt": {
+   "new": [
+    "openai/gpt-6-luna-decisions-20261006"
+   ],
+   "old": [
+    "nan"
+   ]
+  },
+  "jev": {
+   "new": [
+    "typesafe/jev-1.14-20261014"
+   ],
+   "old": [
+    "nan"
+   ]
+  },
+  "liquid": {
+   "new": [
+    "liquid/d1-ultra-20261015"
+   ],
+   "old": [
+    "liquid/d1-ultra-20261015"
+   ]
+  },
+  "microsoft": {
+   "new": [
+    "microsoft/microsoft-decision-1-20261009"
+   ],
+   "old": [
+    "nan"
+   ]
+  },
+  "pplx": {
+   "new": [
+    "perplexity/pplx-decider-v1.2-20261016"
+   ],
+   "old": [
+    "perplexity/pplx-decider-v1.2-20261016"
+   ]
+  }
+ },
+ "cost": {
+  "new": 0.008223850000000001,
+  "old_same_calls": 0.008223850000000001
+ },
+ "ids": [
+  43,
+  87,
+  90,
+  103,
+  119,
+  133,
+  146,
+  176,
+  216,
+  227,
+  315,
+  344,
+  528,
+  674,
+  701,
+  758,
+  766,
+  783,
+  798,
+  942,
+  985,
+  987,
+  1060,
+  1096,
+  1130,
+  1159,
+  1172,
+  1207,
+  1219,
+  1244
+ ],
+ "seed": 0,
+ "strata": [
+  {
+   "ground_truth": "ask_human",
+   "multi_turn": "False",
+   "n": "5"
+  },
+  {
+   "ground_truth": "ask_human",
+   "multi_turn": "True",
+   "n": "5"
+  },
+  {
+   "ground_truth": "direct_execute",
+   "multi_turn": "False",
+   "n": "5"
+  },
+  {
+   "ground_truth": "direct_execute",
+   "multi_turn": "True",
+   "n": "5"
+  },
+  {
+   "ground_truth": "refuse",
+   "multi_turn": "False",
+   "n": "5"
+  },
+  {
+   "ground_truth": "refuse",
+   "multi_turn": "True",
+   "n": "5"
+  }
+ ],
+ "train_run_response_models": {
+  "gpt": [
+   "openai/gpt-6-luna-decisions-20261006"
+  ],
+  "jev": [
+   "typesafe/jev-1.14-20261014"
+  ],
+  "liquid": [
+   "liquid/d1-ultra-20261015"
+  ],
+  "microsoft": [
+   "microsoft/microsoft-decision-1-20261009"
+  ],
+  "pplx": [
+   "perplexity/pplx-decider-v1.2-20261016"
+  ]
+ }
+}

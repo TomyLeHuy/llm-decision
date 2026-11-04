@@ -1,0 +1,194 @@
+{
+ "ids": [
+  90,
+  176,
+  674,
+  766,
+  942,
+  1060,
+  1130,
+  1159,
+  1172,
+  1244
+ ],
+ "seed": 0,
+ "repeats": 3,
+ "table": [
+  {
+   "model": "gpt",
+   "sd_direct_execute_mean": 0.0,
+   "sd_direct_execute_max": 0.0,
+   "sd_ask_human_mean": 0.0,
+   "sd_ask_human_max": 0.0,
+   "sd_refuse_mean": 0.0,
+   "sd_refuse_max": 0.0,
+   "max_range_any": 0.0,
+   "calls_with_any_change": 0,
+   "choice_varies": 0,
+   "n_calls": 10
+  },
+  {
+   "model": "jev",
+   "sd_direct_execute_mean": 0.009364,
+   "sd_direct_execute_max": 0.030551,
+   "sd_ask_human_mean": 0.016516,
+   "sd_ask_human_max": 0.051962,
+   "sd_refuse_mean": 0.008456,
+   "sd_refuse_max": 0.046188,
+   "max_range_any": 0.09,
+   "calls_with_any_change": 9,
+   "choice_varies": 0,
+   "n_calls": 10
+  },
+  {
+   "model": "liquid",
+   "sd_direct_execute_mean": 0.023032,
+   "sd_direct_execute_max": 0.078542,
+   "sd_ask_human_mean": 0.026469,
+   "sd_ask_human_max": 0.049935,
+   "sd_refuse_mean": 0.023878,
+   "sd_refuse_max": 0.049753,
+   "max_range_any": 0.140881,
+   "calls_with_any_change": 10,
+   "choice_varies": 0,
+   "n_calls": 10
+  },
+  {
+   "model": "microsoft",
+   "sd_direct_execute_mean": 0.010284,
+   "sd_direct_execute_max": 0.037586,
+   "sd_ask_human_mean": 0.010834,
+   "sd_ask_human_max": 0.042259,
+   "sd_refuse_mean": 0.008507,
+   "sd_refuse_max": 0.04268,
+   "max_range_any": 0.083827,
+   "calls_with_any_change": 10,
+   "choice_varies": 0,
+   "n_calls": 10
+  },
+  {
+   "model": "pplx",
+   "sd_direct_execute_mean": 0.0,
+   "sd_direct_execute_max": 0.0,
+   "sd_ask_human_mean": 0.0,
+   "sd_ask_human_max": 0.0,
+   "sd_refuse_mean": 0.0,
+   "sd_refuse_max": 0.0,
+   "max_range_any": 0.0,
+   "calls_with_any_change": 1,
+   "choice_varies": 0,
+   "n_calls": 10
+  }
+ ],
+ "rms_within_sd_all": {
+  "direct_execute": 0.016929959126128828,
+  "ask_human": 0.01800922011625596,
+  "refuse": 0.016398026164384523
+ },
+ "rms_within_sd_by_model": {
+  "gpt": {
+   "direct_execute": 0.0,
+   "ask_human": 0.0,
+   "refuse": 0.0
+  },
+  "jev": {
+   "direct_execute": 0.013165611772087658,
+   "ask_human": 0.021908902300206656,
+   "refuse": 0.01581138830084189
+  },
+  "liquid": {
+   "direct_execute": 0.031727924567971945,
+   "ask_human": 0.029561822767067678,
+   "refuse": 0.029049038156036537
+  },
+  "microsoft": {
+   "direct_execute": 0.015909841273117595,
+   "ask_human": 0.016363333421570144,
+   "refuse": 0.015831288407717425
+  },
+  "pplx": {
+   "direct_execute": 4.378805115804602e-08,
+   "ask_human": 4.237140315860444e-08,
+   "refuse": 1.416647992434236e-09
+  }
+ },
+ "by_multi_turn": [
+  {
+   "model": "gpt",
+   "multi_turn": false,
+   "p_direct_execute": 0.0,
+   "p_ask_human": 0.0,
+   "p_refuse": 0.0
+  },
+  {
+   "model": "gpt",
+   "multi_turn": true,
+   "p_direct_execute": 0.0,
+   "p_ask_human": 0.0,
+   "p_refuse": 0.0
+  },
+  {
+   "model": "jev",
+   "multi_turn": false,
+   "p_direct_execute": 0.009574,
+   "p_ask_human": 0.023031,
+   "p_refuse": 0.015757
+  },
+  {
+   "model": "jev",
+   "multi_turn": true,
+   "p_direct_execute": 0.009155,
+   "p_ask_human": 0.01,
+   "p_refuse": 0.001155
+  },
+  {
+   "model": "liquid",
+   "multi_turn": false,
+   "p_direct_execute": 0.018973,
+   "p_ask_human": 0.035689,
+   "p_refuse": 0.03018
+  },
+  {
+   "model": "liquid",
+   "multi_turn": true,
+   "p_direct_execute": 0.027091,
+   "p_ask_human": 0.01725,
+   "p_refuse": 0.017576
+  },
+  {
+   "model": "microsoft",
+   "multi_turn": false,
+   "p_direct_execute": 0.008913,
+   "p_ask_human": 0.013348,
+   "p_refuse": 0.012387
+  },
+  {
+   "model": "microsoft",
+   "multi_turn": true,
+   "p_direct_execute": 0.011655,
+   "p_ask_human": 0.00832,
+   "p_refuse": 0.004626
+  },
+  {
+   "model": "pplx",
+   "multi_turn": false,
+   "p_direct_execute": 0.0,
+   "p_ask_human": 0.0,
+   "p_refuse": 0.0
+  },
+  {
+   "model": "pplx",
+   "multi_turn": true,
+   "p_direct_execute": 0.0,
+   "p_ask_human": 0.0,
+   "p_refuse": 0.0
+  }
+ ],
+ "max_absdiff_vs_s2_run": {
+  "gpt": 0.0,
+  "jev": 0.09999999999999998,
+  "liquid": 0.14996920278022158,
+  "microsoft": 0.10298523328122167,
+  "pplx": 2.398370337330924e-07
+ }
+}

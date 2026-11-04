@@ -1,0 +1,201 @@
+{
+ "cost_ratio_new_over_old": {
+  "gpt": 1.0,
+  "jev": 1.0,
+  "liquid": 1.0,
+  "microsoft": 1.0,
+  "pplx": 1.0
+ },
+ "pilot_ids": [
+  3,
+  10,
+  58,
+  90,
+  128,
+  143,
+  203,
+  238,
+  271,
+  325,
+  341,
+  408,
+  467,
+  468,
+  473,
+  566,
+  582,
+  606,
+  630,
+  636,
+  679,
+  690,
+  701,
+  725,
+  794,
+  841,
+  850,
+  874,
+  893,
+  900,
+  903,
+  918,
+  986,
+  1000,
+  1053,
+  1064,
+  1112,
+  1130,
+  1133,
+  1159,
+  1161,
+  1186,
+  1187,
+  1212,
+  1248,
+  1288,
+  1311,
+  1367,
+  1405,
+  1429
+ ],
+ "pilot_seed": 0,
+ "pilot_strata": [
+  {
+   "ground_truth": "ask_human",
+   "multi_turn": "False",
+   "service_type": "benchmark",
+   "n": "5"
+  },
+  {
+   "ground_truth": "ask_human",
+   "multi_turn": "False",
+   "service_type": "enterprise",
+   "n": "5"
+  },
+  {
+   "ground_truth": "ask_human",
+   "multi_turn": "True",
+   "service_type": "benchmark",
+   "n": "2"
+  },
+  {
+   "ground_truth": "ask_human",
+   "multi_turn": "True",
+   "service_type": "enterprise",
+   "n": "5"
+  },
+  {
+   "ground_truth": "direct_execute",
+   "multi_turn": "False",
+   "service_type": "benchmark",
+   "n": "5"
+  },
+  {
+   "ground_truth": "direct_execute",
+   "multi_turn": "False",
+   "service_type": "enterprise",
+   "n": "5"
+  },
+  {
+   "ground_truth": "direct_execute",
+   "multi_turn": "True",
+   "service_type": "benchmark",
+   "n": "5"
+  },
+  {
+   "ground_truth": "direct_execute",
+   "multi_turn": "True",
+   "service_type": "enterprise",
+   "n": "2"
+  },
+  {
+   "ground_truth": "refuse",
+   "multi_turn": "False",
+   "service_type": "benchmark",
+   "n": "4"
+  },
+  {
+   "ground_truth": "refuse",
+   "multi_turn": "False",
+   "service_type": "enterprise",
+   "n": "4"
+  },
+  {
+   "ground_truth": "refuse",
+   "multi_turn": "True",
+   "service_type": "benchmark",
+   "n": "4"
+  },
+  {
+   "ground_truth": "refuse",
+   "multi_turn": "True",
+   "service_type": "enterprise",
+   "n": "4"
+  }
+ ],
+ "pilot_both_strategies": {
+  "n_samples": 50,
+  "calls": 3950,
+  "cost_usd": 0.2336,
+  "runtime_min_4_workers": 8.2,
+  "by_group": {
+   "single_turn": {
+    "samples": 28,
+    "calls": 2360,
+    "cost_usd": 0.1667
+   },
+   "multi_turn": {
+    "samples": 22,
+    "calls": 1590,
+    "cost_usd": 0.0669
+   }
+  }
+ },
+ "full_one_strategy": {
+  "n_samples": 1433,
+  "calls": 61855,
+  "cost_usd": 4.1844,
+  "runtime_min_4_workers": 128.5,
+  "by_group": {
+   "single_turn": {
+    "samples": 1311,
+    "calls": 57585,
+    "cost_usd": 4.0129
+   },
+   "multi_turn": {
+    "samples": 122,
+    "calls": 4270,
+    "cost_usd": 0.1715
+   }
+  }
+ },
+ "full_both_strategies": {
+  "n_samples": 1433,
+  "calls": 116545,
+  "cost_usd": 7.9199,
+  "runtime_min_4_workers": 242.1,
+  "by_group": {
+   "single_turn": {
+    "samples": 1311,
+    "calls": 108615,
+    "cost_usd": 7.601
+   },
+   "multi_turn": {
+    "samples": 122,
+    "calls": 7930,
+    "cost_usd": 0.3189
+   }
+  }
+ },
+ "spent_so_far": 0.016572598,
+ "spent_by_tag": {
+  "p0_s2": {
+   "calls": 150,
+   "usd": 0.00822
+  },
+  "p0_s3": {
+   "calls": 150,
+   "usd": 0.00835
+  }
+ }
+}

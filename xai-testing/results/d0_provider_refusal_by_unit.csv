@@ -1,0 +1,16 @@
+turn,unit_type,n,provider_refusal,rate
+multi_turn,baseline,122,0,0.0
+multi_turn,description,122,0,0.0
+multi_turn,service,122,0,0.0
+multi_turn,tool,122,0,0.0
+multi_turn,tool_args,237,0,0.0
+multi_turn,user_memory,7,0,0.0
+multi_turn,user_task,122,0,0.0
+single_turn,baseline,1311,0,0.0
+single_turn,description,1311,0,0.0
+single_turn,prior_steps,607,0,0.0
+single_turn,service,1311,3,0.002288329519450801
+single_turn,tool,1311,2,0.0015255530129672007
+single_turn,tool_args,3542,1,0.000282326369282891
+single_turn,user_memory,813,0,0.0
+single_turn,user_task,1311,1,0.0007627765064836003

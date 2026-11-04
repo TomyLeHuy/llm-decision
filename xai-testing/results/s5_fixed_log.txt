@@ -1,0 +1,10 @@
+[query] jobs 615 | cached 0 | to call 615 | spent USD 0.8001 | batch est. <= 0.0590
+[query] 615/615 | errors 0 | provider_refusal 0 | 83s | ~0 min left | spent USD 0.8489
+/Users/tomyle/Pycharm/DFKI/llm-decisions/llm-decision/xai-testing/runs/fixed_multiturn/test_scores.jsonl 615 {'ok': 615}
+[query] jobs 3665 | cached 60 | to call 3605 | spent USD 0.8489 | batch est. <= 0.3461
+[query] 1000/3605 | errors 0 | provider_refusal 0 | 148s | ~6 min left | spent USD 0.9286
+[query] 2000/3605 | errors 0 | provider_refusal 0 | 323s | ~4 min left | spent USD 1.0079
+[query] 3000/3605 | errors 0 | provider_refusal 1 | 497s | ~2 min left | spent USD 1.0956
+[query] 3605/3605 | errors 0 | provider_refusal 1 | 598s | ~0 min left | spent USD 1.1423
+/Users/tomyle/Pycharm/DFKI/llm-decisions/llm-decision/xai-testing/runs/fixed_multiturn/train_scores.jsonl 3665 {'ok': 3664, 'provider_refusal': 1}
+done fixed 2026-11-03T21:43:31+00:00

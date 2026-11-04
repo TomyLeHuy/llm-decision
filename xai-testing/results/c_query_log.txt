@@ -1,0 +1,129 @@
+python-dotenv could not parse statement starting at line 2
+python-dotenv could not parse statement starting at line 3
+python-dotenv could not parse statement starting at line 2
+python-dotenv could not parse statement starting at line 3
+calls 1433 | variants 12371 | deterministic jobs 12371 | noisy jobs 111339
+[query] jobs 12371 | cached 712 | to call 11659 | spent USD 1.1594 | batch est. <= 2.1511
+python-dotenv could not parse statement starting at line 2
+python-dotenv could not parse statement starting at line 3
+[query] 1000/11659 | errors 0 | provider_refusal 1 | 144s | ~26 min left | spent USD 1.2843
+[query] 2000/11659 | errors 0 | provider_refusal 2 | 290s | ~23 min left | spent USD 1.4001
+[query] 3000/11659 | errors 0 | provider_refusal 2 | 422s | ~20 min left | spent USD 1.5362
+[query] 4000/11659 | errors 0 | provider_refusal 2 | 566s | ~18 min left | spent USD 1.6558
+[query] 5000/11659 | errors 0 | provider_refusal 3 | 696s | ~15 min left | spent USD 1.7870
+[query] 6000/11659 | errors 0 | provider_refusal 4 | 830s | ~13 min left | spent USD 1.9145
+[query] 7000/11659 | errors 0 | provider_refusal 5 | 974s | ~11 min left | spent USD 2.0269
+[query] 8000/11659 | errors 0 | provider_refusal 5 | 1107s | ~8 min left | spent USD 2.1489
+[query] 9000/11659 | errors 0 | provider_refusal 5 | 1233s | ~6 min left | spent USD 2.2831
+[query] 10000/11659 | errors 0 | provider_refusal 6 | 1357s | ~4 min left | spent USD 2.4035
+[query] 11000/11659 | errors 0 | provider_refusal 6 | 1490s | ~1 min left | spent USD 2.5296
+[query] 11659/11659 | errors 0 | provider_refusal 7 | 1591s | ~0 min left | spent USD 2.6079
+[query] jobs 111339 | cached 6408 | to call 104931 | spent USD 2.6079 | batch est. <= 9.0241
+python-dotenv could not parse statement starting at line 2
+python-dotenv could not parse statement starting at line 3
+[query] 1000/104931 | errors 0 | provider_refusal 0 | 124s | ~215 min left | spent USD 2.6692
+[query] 2000/104931 | errors 0 | provider_refusal 0 | 231s | ~198 min left | spent USD 2.7187
+[query] 3000/104931 | errors 0 | provider_refusal 0 | 337s | ~191 min left | spent USD 2.7821
+[query] 4000/104931 | errors 0 | provider_refusal 0 | 456s | ~192 min left | spent USD 2.8311
+[query] 5000/104931 | errors 0 | provider_refusal 0 | 558s | ~186 min left | spent USD 2.8837
+[query] 6000/104931 | errors 0 | provider_refusal 0 | 669s | ~184 min left | spent USD 2.9426
+[query] 7000/104931 | errors 0 | provider_refusal 0 | 770s | ~180 min left | spent USD 3.0163
+[query] 8000/104931 | errors 0 | provider_refusal 0 | 888s | ~179 min left | spent USD 3.0657
+[query] 9000/104931 | errors 0 | provider_refusal 0 | 1003s | ~178 min left | spent USD 3.1338
+[query] 10000/104931 | errors 0 | provider_refusal 0 | 1136s | ~180 min left | spent USD 3.1895
+[query] 11000/104931 | errors 0 | provider_refusal 0 | 1263s | ~180 min left | spent USD 3.2461
+[query] 12000/104931 | errors 0 | provider_refusal 0 | 1398s | ~180 min left | spent USD 3.2997
+[query] 13000/104931 | errors 0 | provider_refusal 0 | 1541s | ~182 min left | spent USD 3.3608
+[query] 14000/104931 | errors 0 | provider_refusal 0 | 1663s | ~180 min left | spent USD 3.4229
+[query] 15000/104931 | errors 0 | provider_refusal 0 | 1773s | ~177 min left | spent USD 3.4830
+[query] 16000/104931 | errors 0 | provider_refusal 0 | 1907s | ~177 min left | spent USD 3.5406
+[query] 17000/104931 | errors 0 | provider_refusal 0 | 2066s | ~178 min left | spent USD 3.6003
+[query] 18000/104931 | errors 0 | provider_refusal 0 | 2200s | ~177 min left | spent USD 3.6613
+[query] 19000/104931 | errors 0 | provider_refusal 0 | 2335s | ~176 min left | spent USD 3.7135
+[query] 20000/104931 | errors 0 | provider_refusal 0 | 2476s | ~175 min left | spent USD 3.7658
+[query] 21000/104931 | errors 0 | provider_refusal 0 | 2607s | ~174 min left | spent USD 3.8173
+[query] 22000/104931 | errors 0 | provider_refusal 0 | 2736s | ~172 min left | spent USD 3.8665
+[query] 23000/104931 | errors 0 | provider_refusal 0 | 2878s | ~171 min left | spent USD 3.9348
+[query] 24000/104931 | errors 0 | provider_refusal 0 | 3018s | ~170 min left | spent USD 3.9872
+[query] 25000/104931 | errors 0 | provider_refusal 0 | 3155s | ~168 min left | spent USD 4.0494
+[query] 26000/104931 | errors 0 | provider_refusal 0 | 3258s | ~165 min left | spent USD 4.1088
+[query] 27000/104931 | errors 0 | provider_refusal 0 | 3373s | ~162 min left | spent USD 4.1743
+[query] 28000/104931 | errors 0 | provider_refusal 0 | 3493s | ~160 min left | spent USD 4.2230
+[query] 29000/104931 | errors 0 | provider_refusal 0 | 3619s | ~158 min left | spent USD 4.2743
+[query] 30000/104931 | errors 0 | provider_refusal 0 | 3732s | ~155 min left | spent USD 4.3415
+[query] 31000/104931 | errors 0 | provider_refusal 0 | 3834s | ~152 min left | spent USD 4.3994
+[query] 32000/104931 | errors 0 | provider_refusal 0 | 3961s | ~150 min left | spent USD 4.4596
+[query] 33000/104931 | errors 0 | provider_refusal 0 | 4080s | ~148 min left | spent USD 4.5163
+[query] 34000/104931 | errors 0 | provider_refusal 0 | 4177s | ~145 min left | spent USD 4.5711
+[query] 35000/104931 | errors 0 | provider_refusal 0 | 4302s | ~143 min left | spent USD 4.6262
+[query] 36000/104931 | errors 0 | provider_refusal 0 | 4424s | ~141 min left | spent USD 4.6909
+[query] 37000/104931 | errors 0 | provider_refusal 0 | 4536s | ~139 min left | spent USD 4.7372
+[query] 38000/104931 | errors 0 | provider_refusal 0 | 4653s | ~137 min left | spent USD 4.8003
+[query] 39000/104931 | errors 0 | provider_refusal 0 | 4751s | ~134 min left | spent USD 4.8509
+[query] 40000/104931 | errors 0 | provider_refusal 0 | 4836s | ~131 min left | spent USD 4.9034
+[query] 41000/104931 | errors 0 | provider_refusal 0 | 4916s | ~128 min left | spent USD 4.9635
+[query] 42000/104931 | errors 0 | provider_refusal 0 | 5000s | ~125 min left | spent USD 5.0350
+[query] 43000/104931 | errors 0 | provider_refusal 0 | 5076s | ~122 min left | spent USD 5.0847
+[query] 44000/104931 | errors 0 | provider_refusal 0 | 5149s | ~119 min left | spent USD 5.1542
+[query] 45000/104931 | errors 0 | provider_refusal 0 | 5223s | ~116 min left | spent USD 5.2081
+[query] 46000/104931 | errors 0 | provider_refusal 0 | 5301s | ~113 min left | spent USD 5.2671
+[query] 47000/104931 | errors 0 | provider_refusal 0 | 5790s | ~119 min left | spent USD 5.3194
+[query] 48000/104931 | errors 0 | provider_refusal 0 | 6225s | ~123 min left | spent USD 5.3811
+[query] 49000/104931 | errors 0 | provider_refusal 0 | 6311s | ~120 min left | spent USD 5.4412
+[query] 50000/104931 | errors 0 | provider_refusal 0 | 6376s | ~117 min left | spent USD 5.5023
+[query] 51000/104931 | errors 0 | provider_refusal 0 | 6442s | ~114 min left | spent USD 5.5605
+[query] 52000/104931 | errors 0 | provider_refusal 0 | 6508s | ~110 min left | spent USD 5.6186
+[query] 53000/104931 | errors 0 | provider_refusal 0 | 6581s | ~107 min left | spent USD 5.6806
+[query] 54000/104931 | errors 0 | provider_refusal 0 | 6650s | ~105 min left | spent USD 5.7318
+[query] 55000/104931 | errors 0 | provider_refusal 0 | 6720s | ~102 min left | spent USD 5.7844
+[query] 56000/104931 | errors 0 | provider_refusal 0 | 6793s | ~99 min left | spent USD 5.8360
+[query] 57000/104931 | errors 0 | provider_refusal 0 | 6864s | ~96 min left | spent USD 5.8849
+[query] 58000/104931 | errors 0 | provider_refusal 0 | 6937s | ~94 min left | spent USD 5.9536
+[query] 59000/104931 | errors 0 | provider_refusal 0 | 7009s | ~91 min left | spent USD 6.0055
+[query] 60000/104931 | errors 0 | provider_refusal 0 | 7079s | ~88 min left | spent USD 6.0682
+[query] 61000/104931 | errors 0 | provider_refusal 0 | 7151s | ~86 min left | spent USD 6.1271
+[query] 62000/104931 | errors 0 | provider_refusal 0 | 7220s | ~83 min left | spent USD 6.1943
+[query] 63000/104931 | errors 0 | provider_refusal 0 | 7290s | ~81 min left | spent USD 6.2413
+[query] 64000/104931 | errors 0 | provider_refusal 0 | 7362s | ~78 min left | spent USD 6.2945
+[query] 65000/104931 | errors 0 | provider_refusal 0 | 7434s | ~76 min left | spent USD 6.3598
+[query] 66000/104931 | errors 0 | provider_refusal 0 | 7507s | ~74 min left | spent USD 6.4192
+[query] 67000/104931 | errors 0 | provider_refusal 0 | 7579s | ~72 min left | spent USD 6.4780
+[query] 68000/104931 | errors 0 | provider_refusal 0 | 7665s | ~69 min left | spent USD 6.5361
+[query] 69000/104931 | errors 0 | provider_refusal 0 | 7754s | ~67 min left | spent USD 6.5894
+[query] 70000/104931 | errors 0 | provider_refusal 0 | 7836s | ~65 min left | spent USD 6.6444
+[query] 71000/104931 | errors 0 | provider_refusal 0 | 7904s | ~63 min left | spent USD 6.7097
+[query] 72000/104931 | errors 0 | provider_refusal 0 | 7970s | ~61 min left | spent USD 6.7557
+[query] 73000/104931 | errors 0 | provider_refusal 0 | 8037s | ~59 min left | spent USD 6.8186
+[query] 74000/104931 | errors 0 | provider_refusal 0 | 8102s | ~56 min left | spent USD 6.8691
+[query] 75000/104931 | errors 0 | provider_refusal 0 | 8173s | ~54 min left | spent USD 6.9218
+[query] 76000/104931 | errors 0 | provider_refusal 0 | 8245s | ~52 min left | spent USD 6.9838
+[query] 77000/104931 | errors 0 | provider_refusal 0 | 8319s | ~50 min left | spent USD 7.0541
+[query] 78000/104931 | errors 0 | provider_refusal 0 | 8390s | ~48 min left | spent USD 7.1038
+[query] 79000/104931 | errors 0 | provider_refusal 0 | 8462s | ~46 min left | spent USD 7.1750
+[query] 80000/104931 | errors 0 | provider_refusal 0 | 8534s | ~44 min left | spent USD 7.2275
+[query] 81000/104931 | errors 0 | provider_refusal 0 | 8607s | ~42 min left | spent USD 7.2864
+[query] 82000/104931 | errors 0 | provider_refusal 0 | 8677s | ~40 min left | spent USD 7.3392
+[query] 83000/104931 | errors 0 | provider_refusal 0 | 8746s | ~39 min left | spent USD 7.3996
+[query] 84000/104931 | errors 0 | provider_refusal 0 | 8819s | ~37 min left | spent USD 7.4596
+[query] 85000/104931 | errors 0 | provider_refusal 0 | 8891s | ~35 min left | spent USD 7.5214
+[query] 86000/104931 | errors 0 | provider_refusal 0 | 8964s | ~33 min left | spent USD 7.5796
+[query] 87000/104931 | errors 0 | provider_refusal 0 | 9036s | ~31 min left | spent USD 7.6369
+[query] 88000/104931 | errors 0 | provider_refusal 0 | 9102s | ~29 min left | spent USD 7.6991
+[query] 89000/104931 | errors 0 | provider_refusal 0 | 9168s | ~27 min left | spent USD 7.7507
+[query] 90000/104931 | errors 0 | provider_refusal 0 | 9234s | ~26 min left | spent USD 7.8029
+[query] 91000/104931 | errors 0 | provider_refusal 0 | 9297s | ~24 min left | spent USD 7.8544
+[query] 92000/104931 | errors 0 | provider_refusal 0 | 9362s | ~22 min left | spent USD 7.9035
+[query] 93000/104931 | errors 0 | provider_refusal 0 | 9429s | ~20 min left | spent USD 7.9722
+[query] 94000/104931 | errors 0 | provider_refusal 0 | 9492s | ~18 min left | spent USD 8.0241
+[query] 95000/104931 | errors 0 | provider_refusal 0 | 9558s | ~17 min left | spent USD 8.0871
+[query] 96000/104931 | errors 0 | provider_refusal 0 | 9623s | ~15 min left | spent USD 8.1456
+[query] 97000/104931 | errors 0 | provider_refusal 0 | 9690s | ~13 min left | spent USD 8.2129
+[query] 98000/104931 | errors 0 | provider_refusal 0 | 9754s | ~11 min left | spent USD 8.2597
+[query] 99000/104931 | errors 0 | provider_refusal 0 | 9819s | ~10 min left | spent USD 8.3146
+[query] 100000/104931 | errors 0 | provider_refusal 0 | 9887s | ~8 min left | spent USD 8.3782
+[query] 101000/104931 | errors 0 | provider_refusal 0 | 9957s | ~6 min left | spent USD 8.4375
+[query] 102000/104931 | errors 0 | provider_refusal 0 | 10030s | ~5 min left | spent USD 8.4963
+[query] 103000/104931 | errors 0 | provider_refusal 0 | 10100s | ~3 min left | spent USD 8.5545
+[query] 104000/104931 | errors 0 | provider_refusal 0 | 10173s | ~2 min left | spent USD 8.6077
+[query] 104931/104931 | errors 0 | provider_refusal 0 | 10239s | ~0 min left | spent USD 8.6603
+done in 197.2 min | spent USD 8.6603

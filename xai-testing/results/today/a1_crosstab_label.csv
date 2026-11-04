@@ -1,0 +1,7 @@
+ground_truth,multi_turn,n,flagged_ge3,flagged_5,rate_ge3
+ask_human,False,473,105,17,0.2219873150105708
+ask_human,True,15,1,0,0.06666666666666667
+direct_execute,False,504,42,14,0.08333333333333333
+direct_execute,True,36,2,0,0.05555555555555555
+refuse,False,334,89,24,0.26646706586826346
+refuse,True,71,27,10,0.38028169014084506

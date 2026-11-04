@@ -1,0 +1,47 @@
+[
+ {
+  "model": "gpt",
+  "n": 16,
+  "today_vs_train_mean": 0.0,
+  "today_vs_train_max": 0.0,
+  "oct_vs_train_mean": 0.0,
+  "oct_vs_train_max": 0.0,
+  "today_vs_oct_mean": 0.0
+ },
+ {
+  "model": "jev",
+  "n": 16,
+  "today_vs_train_mean": 0.01688,
+  "today_vs_train_max": 0.06,
+  "oct_vs_train_mean": 0.02313,
+  "oct_vs_train_max": 0.07,
+  "today_vs_oct_mean": 0.02125
+ },
+ {
+  "model": "liquid",
+  "n": 16,
+  "today_vs_train_mean": 0.07545,
+  "today_vs_train_max": 0.25364,
+  "oct_vs_train_mean": 0.04633,
+  "oct_vs_train_max": 0.11952,
+  "today_vs_oct_mean": 0.04616
+ },
+ {
+  "model": "microsoft",
+  "n": 16,
+  "today_vs_train_mean": 0.14362,
+  "today_vs_train_max": 0.50237,
+  "oct_vs_train_mean": 0.01561,
+  "oct_vs_train_max": 0.11299,
+  "today_vs_oct_mean": 0.13764
+ },
+ {
+  "model": "pplx",
+  "n": 16,
+  "today_vs_train_mean": 0.0,
+  "today_vs_train_max": 0.0,
+  "oct_vs_train_mean": 0.0,
+  "oct_vs_train_max": 0.0,
+  "today_vs_oct_mean": 0.0
+ }
+]

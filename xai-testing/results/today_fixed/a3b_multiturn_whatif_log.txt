@@ -1,0 +1,12 @@
+                                                found  safe_all  safe_single_turn  harm_single_turn  harm_multi_turn  unconf_single_turn  over_harm_budget_all  over_harm_budget_single  over_harm_budget_multi
+model     variant                                                                                                                                                                                              
+jev       paper (all calibration calls)           1.0     0.441             0.461             0.016            0.021               0.076                 0.000                    0.000                   0.117
+          without multi-turn calibration calls    1.0     0.421             0.438             0.014            0.019               0.066                 0.000                    0.000                   0.083
+liquid    paper (all calibration calls)           1.0     0.619             0.640             0.008            0.068               0.067                 0.000                    0.000                   0.683
+          without multi-turn calibration calls    1.0     0.664             0.683             0.010            0.076               0.082                 0.000                    0.000                   0.833
+mean      paper (all calibration calls)           1.0     0.470             0.490             0.015            0.030               0.069                 0.000                    0.000                   0.267
+          without multi-turn calibration calls    1.0     0.457             0.476             0.014            0.027               0.064                 0.000                    0.000                   0.233
+microsoft paper (all calibration calls)           1.0     0.429             0.448             0.019            0.032               0.057                 0.017                    0.017                   0.300
+          without multi-turn calibration calls    1.0     0.355             0.372             0.016            0.026               0.054                 0.050                    0.017                   0.217
+pplx      paper (all calibration calls)           1.0     0.562             0.584             0.010            0.032               0.066                 0.000                    0.000                   0.267
+          without multi-turn calibration calls    1.0     0.574             0.596             0.011            0.032               0.071                 0.000                    0.000                   0.233
