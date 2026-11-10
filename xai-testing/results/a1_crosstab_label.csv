@@ -1,7 +1,0 @@
-ground_truth,multi_turn,n,flagged_ge3,flagged_5,rate_ge3
-ask_human,False,473,142,18,0.30021141649048627
-ask_human,True,15,2,0,0.13333333333333333
-direct_execute,False,504,52,15,0.10317460317460317
-direct_execute,True,36,2,0,0.05555555555555555
-refuse,False,334,104,23,0.31137724550898205
-refuse,True,71,32,10,0.4507042253521127

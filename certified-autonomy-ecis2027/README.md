@@ -60,7 +60,7 @@ The notebooks are the original exploratory analysis. `02_full_evalrun` produced 
 The design was developed and evaluated on the same 1,433 calls. The confirmatory evaluation tests the frozen design on calls that played no part in it. The full protocol and the predictions are in `confirmatory/PROTOCOL.md`; step-by-step instructions for running it are in `confirmatory/README.md`.
 
 What will be run:
-1. **Score** the SAFETY SENTRY train split (7,767 calls) and the Mailu out-of-distribution split (198 calls) with the same three models, and re-score 150 test-split calls to detect vendor model changes. `confirmatory/score_split.py` reproduces the original run exactly; it is resumable and costs about USD 2.50 in total.
+1. **Score** the SAFETY SENTRY train split (7,767 calls) and the Mailu out-of-distribution split (198 calls) with the same three models, and re-score 150 test-split calls to detect vendor model changes. `confirmatory/score_split.py` reproduces the original run exactly with `--input-mode first_step`; it is resumable and costs about USD 2.50 in total. Its default, `--input-mode all_steps`, corrects an input error found after submission: for multi-step records (about 9% of each split) the original run sent only the first user message, while the label belongs to the last proposed call (see `confirmatory/DEVIATIONS.md`, 2026-11-10).
 2. **Analyse** with `confirmatory/confirm_analysis.py`, fixed before any new score exists:
    - Primary test: the three G4 policies calibrated on the 1,433 calls are applied, unchanged, to the untouched train calls.
    - The calibration procedure is repeated on disjoint calibration samples of the train split, a closer stand-in for separate deployments than resampled splits.
