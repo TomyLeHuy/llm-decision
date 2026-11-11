@@ -1,0 +1,67 @@
+
+[2026-11-10T21:04:37+00:00] which=pilot calls=3 dry_run=True determinism=True
+  round trip: byte-identical full coalition for all 3 calls
+  coalitions (sum of 2^n): 224 | distinct requests: 222 | already cached: 0 | to query: 222 (+3 determinism re-queries)
+  cost estimate: 225 x 8.80e-05 = USD 0.0198 (cap USD 2.00)
+
+[2026-11-10T21:04:37+00:00] which=all calls=30 dry_run=True determinism=False
+  round trip: byte-identical full coalition for all 30 calls
+  coalitions (sum of 2^n): 2400 | distinct requests: 2317 | already cached: 0 | to query: 2317 (+0 determinism re-queries)
+  cost estimate: 2317 x 8.80e-05 = USD 0.2039 (cap USD 2.00)
+
+[2026-11-10T21:05:21+00:00] which=pilot calls=3 dry_run=False determinism=True
+  round trip: byte-identical full coalition for all 3 calls
+  coalitions (sum of 2^n): 224 | distinct requests: 222 | already cached: 0 | to query: 222 (+3 determinism re-queries)
+  cost estimate: 225 x 8.80e-05 = USD 0.0198 (cap USD 2.00)
+  determinism re-queries: [(541, 0), (444, 0), (1075, 0)]
+  done in 68s | model openai/gpt-6-luna-decisions | distinct requests answered now: 225 | HTTP requests incl. retries: 225 | cache hits: 450 | billed cost now (API usage.cost): USD 0.0209 | cache size 222 {'ok': 212, 'provider_refusal': 10}
+
+[2026-11-10T21:08:41+00:00] which=pilot calls=3 dry_run=False determinism=False fixed=[]
+  round trip: byte-identical full coalition for all 3 calls
+  coalitions (sum of 2^n): 224 | distinct requests: 222 | already cached: 222 | to query: 0 (+0 determinism re-queries)
+  cost estimate: 0 x 8.80e-05 = USD 0.0000 (cap USD 2.00)
+  done in 0s | model openai/gpt-6-luna-decisions | distinct requests answered now: 0 | HTTP requests incl. retries: 0 | cache hits: 672 | billed cost now (API usage.cost): USD 0.0000 | cache size 222 {'ok': 212, 'provider_refusal': 10}
+
+[2026-11-10T21:08:49+00:00] which=pilot calls=3 dry_run=False determinism=False fixed=['tool']
+  round trip: byte-identical full coalition for all 3 calls
+  coalitions (sum of 2^n): 112 | distinct requests: 112 | already cached: 112 | to query: 0 (+0 determinism re-queries)
+  cost estimate: 0 x 8.80e-05 = USD 0.0000 (cap USD 2.00)
+  done in 0s | model openai/gpt-6-luna-decisions | distinct requests answered now: 0 | HTTP requests incl. retries: 0 | cache hits: 336 | billed cost now (API usage.cost): USD 0.0000 | cache size 222 {'ok': 212, 'provider_refusal': 10}
+
+[2026-11-10T21:08:50+00:00] which=pilot calls=3 dry_run=False determinism=False fixed=['tool', 'tool_args', 'description']
+  round trip: byte-identical full coalition for all 3 calls
+  coalitions (sum of 2^n): 28 | distinct requests: 28 | already cached: 28 | to query: 0 (+0 determinism re-queries)
+  cost estimate: 0 x 8.80e-05 = USD 0.0000 (cap USD 2.00)
+  done in 0s | model openai/gpt-6-luna-decisions | distinct requests answered now: 0 | HTTP requests incl. retries: 0 | cache hits: 84 | billed cost now (API usage.cost): USD 0.0000 | cache size 222 {'ok': 212, 'provider_refusal': 10}
+
+[2026-11-10T21:09:46+00:00] which=all calls=30 dry_run=True determinism=False fixed=[]
+  round trip: byte-identical full coalition for all 30 calls
+  coalitions (sum of 2^n): 2400 | distinct requests: 2317 | already cached: 222 | to query: 2095 (+0 determinism re-queries)
+  cost estimate: 2095 x 8.80e-05 = USD 0.1844 (cap USD 2.00)
+
+[2026-11-10T21:09:46+00:00] which=all calls=30 dry_run=True determinism=False fixed=['tool']
+  round trip: byte-identical full coalition for all 30 calls
+  coalitions (sum of 2^n): 1200 | distinct requests: 1188 | already cached: 112 | to query: 1076 (+0 determinism re-queries)
+  cost estimate: 1076 x 8.80e-05 = USD 0.0947 (cap USD 2.00)
+
+[2026-11-10T21:09:46+00:00] which=all calls=30 dry_run=True determinism=False fixed=['tool', 'tool_args', 'description']
+  round trip: byte-identical full coalition for all 30 calls
+  coalitions (sum of 2^n): 300 | distinct requests: 300 | already cached: 28 | to query: 272 (+0 determinism re-queries)
+  cost estimate: 272 x 8.80e-05 = USD 0.0239 (cap USD 2.00)
+
+[2026-11-10T21:15:16+00:00] which=all calls=30 dry_run=True determinism=False fixed=['tool']
+  round trip: byte-identical full coalition for all 30 calls
+  coalitions (sum of 2^n): 1200 | distinct requests: 1188 | already cached: 112 | to query: 1076 (+0 determinism re-queries)
+  cost estimate: 1076 x 8.80e-05 = USD 0.0947 (cap USD 2.00)
+
+[2026-11-10T21:15:16+00:00] which=all calls=30 dry_run=False determinism=False fixed=['tool']
+  round trip: byte-identical full coalition for all 30 calls
+  coalitions (sum of 2^n): 1200 | distinct requests: 1188 | already cached: 112 | to query: 1076 (+0 determinism re-queries)
+  cost estimate: 1076 x 8.80e-05 = USD 0.0947 (cap USD 2.00)
+  done in 405s | model openai/gpt-6-luna-decisions | distinct requests answered now: 1076 | HTTP requests incl. retries: 1083 | cache hits: 2524 | billed cost now (API usage.cost): USD 0.1066 | cache size 1298 {'ok': 1287, 'provider_refusal': 11}
+
+[2026-11-10T21:22:01+00:00] which=all calls=30 dry_run=False determinism=False fixed=['tool', 'tool_args', 'description']
+  round trip: byte-identical full coalition for all 30 calls
+  coalitions (sum of 2^n): 300 | distinct requests: 300 | already cached: 300 | to query: 0 (+0 determinism re-queries)
+  cost estimate: 0 x 8.80e-05 = USD 0.0000 (cap USD 2.00)
+  done in 0s | model openai/gpt-6-luna-decisions | distinct requests answered now: 0 | HTTP requests incl. retries: 0 | cache hits: 900 | billed cost now (API usage.cost): USD 0.0000 | cache size 1298 {'ok': 1287, 'provider_refusal': 11}

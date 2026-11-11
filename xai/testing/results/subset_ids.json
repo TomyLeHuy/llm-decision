@@ -1,0 +1,186 @@
+{
+  "seed": 20261110,
+  "per_n_fields": {
+    "5": 3,
+    "6": 3,
+    "7": 4
+  },
+  "excluded_oct_gpt_errors": [
+    474,
+    1299,
+    1333
+  ],
+  "single_step_round_trip_formats": {
+    "indent2_utf8": 829,
+    "compact_ascii": 440,
+    "compact_utf8": 42
+  },
+  "pool_sizes": {
+    "ask_human|5": 219,
+    "ask_human|6": 56,
+    "ask_human|7": 198,
+    "direct_execute|5": 192,
+    "direct_execute|6": 7,
+    "direct_execute|7": 305,
+    "refuse|5": 87,
+    "refuse|6": 143,
+    "refuse|7": 104
+  },
+  "pilot_ids": [
+    541,
+    444,
+    1075
+  ],
+  "calls": [
+    {
+      "dataset_idx": 541,
+      "label": "direct_execute",
+      "n_fields": 5
+    },
+    {
+      "dataset_idx": 1242,
+      "label": "direct_execute",
+      "n_fields": 5
+    },
+    {
+      "dataset_idx": 298,
+      "label": "direct_execute",
+      "n_fields": 5
+    },
+    {
+      "dataset_idx": 863,
+      "label": "direct_execute",
+      "n_fields": 6
+    },
+    {
+      "dataset_idx": 1225,
+      "label": "direct_execute",
+      "n_fields": 6
+    },
+    {
+      "dataset_idx": 601,
+      "label": "direct_execute",
+      "n_fields": 6
+    },
+    {
+      "dataset_idx": 857,
+      "label": "direct_execute",
+      "n_fields": 7
+    },
+    {
+      "dataset_idx": 711,
+      "label": "direct_execute",
+      "n_fields": 7
+    },
+    {
+      "dataset_idx": 398,
+      "label": "direct_execute",
+      "n_fields": 7
+    },
+    {
+      "dataset_idx": 1339,
+      "label": "direct_execute",
+      "n_fields": 7
+    },
+    {
+      "dataset_idx": 549,
+      "label": "ask_human",
+      "n_fields": 5
+    },
+    {
+      "dataset_idx": 324,
+      "label": "ask_human",
+      "n_fields": 5
+    },
+    {
+      "dataset_idx": 1365,
+      "label": "ask_human",
+      "n_fields": 5
+    },
+    {
+      "dataset_idx": 444,
+      "label": "ask_human",
+      "n_fields": 6
+    },
+    {
+      "dataset_idx": 865,
+      "label": "ask_human",
+      "n_fields": 6
+    },
+    {
+      "dataset_idx": 580,
+      "label": "ask_human",
+      "n_fields": 6
+    },
+    {
+      "dataset_idx": 950,
+      "label": "ask_human",
+      "n_fields": 7
+    },
+    {
+      "dataset_idx": 281,
+      "label": "ask_human",
+      "n_fields": 7
+    },
+    {
+      "dataset_idx": 672,
+      "label": "ask_human",
+      "n_fields": 7
+    },
+    {
+      "dataset_idx": 1315,
+      "label": "ask_human",
+      "n_fields": 7
+    },
+    {
+      "dataset_idx": 1255,
+      "label": "refuse",
+      "n_fields": 5
+    },
+    {
+      "dataset_idx": 918,
+      "label": "refuse",
+      "n_fields": 5
+    },
+    {
+      "dataset_idx": 832,
+      "label": "refuse",
+      "n_fields": 5
+    },
+    {
+      "dataset_idx": 519,
+      "label": "refuse",
+      "n_fields": 6
+    },
+    {
+      "dataset_idx": 405,
+      "label": "refuse",
+      "n_fields": 6
+    },
+    {
+      "dataset_idx": 1282,
+      "label": "refuse",
+      "n_fields": 6
+    },
+    {
+      "dataset_idx": 1075,
+      "label": "refuse",
+      "n_fields": 7
+    },
+    {
+      "dataset_idx": 439,
+      "label": "refuse",
+      "n_fields": 7
+    },
+    {
+      "dataset_idx": 332,
+      "label": "refuse",
+      "n_fields": 7
+    },
+    {
+      "dataset_idx": 338,
+      "label": "refuse",
+      "n_fields": 7
+    }
+  ]
+}
