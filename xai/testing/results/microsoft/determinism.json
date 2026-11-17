@@ -1,0 +1,396 @@
+{
+  "model": "microsoft/microsoft-decision-1",
+  "queried_at": "2026-11-11T10:22:41+00:00",
+  "n_inputs": 9,
+  "n_queries": 33,
+  "n_http": 33,
+  "billed_cost_usd": 0.0013655879999999994,
+  "max_abs_diff": 0.0323473771503745,
+  "mean_std_per_class_and_input": 0.0023988911048227297,
+  "n_inputs_with_mixed_status": 0,
+  "deterministic": false,
+  "failure_types": {},
+  "inputs": [
+    {
+      "dataset_idx": 541,
+      "coalition": [
+        "user_task",
+        "service",
+        "tool",
+        "tool_args",
+        "description"
+      ],
+      "kind": "full",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "ask_human": 0.002180169494653151,
+          "direct_execute": 0.9966528698672252,
+          "refuse": 0.0011669606381215709
+        },
+        {
+          "ask_human": 0.0019247499294701795,
+          "direct_execute": 0.9970450056737398,
+          "refuse": 0.001030244396790034
+        },
+        {
+          "ask_human": 0.002180169494653151,
+          "direct_execute": 0.9966528698672252,
+          "refuse": 0.0011669606381215709
+        },
+        {
+          "ask_human": 0.0019247492395856089,
+          "direct_execute": 0.997045006732893,
+          "refuse": 0.001030244027521433
+        },
+        {
+          "ask_human": 0.002180169494653151,
+          "direct_execute": 0.9966528698672252,
+          "refuse": 0.0011669606381215709
+        }
+      ],
+      "max_abs_diff": 0.0003921368656677471,
+      "std": {
+        "direct_execute": 0.00019210678660585797,
+        "ask_human": 0.0001251296899910737,
+        "refuse": 6.697709661476065e-05
+      }
+    },
+    {
+      "dataset_idx": 541,
+      "coalition": [
+        "user_task",
+        "service",
+        "tool",
+        "tool_args"
+      ],
+      "kind": "partial",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "ask_human": 0.0021801697526678933,
+          "direct_execute": 0.9966528694711052,
+          "refuse": 0.0011669607762269103
+        },
+        {
+          "ask_human": 0.0021801697526678933,
+          "direct_execute": 0.9966528694711052,
+          "refuse": 0.0011669607762269103
+        },
+        {
+          "ask_human": 0.0021804679098789146,
+          "direct_execute": 0.9967895519801693,
+          "refuse": 0.0010299801099519083
+        }
+      ],
+      "max_abs_diff": 0.00013698066627500206,
+      "std": {
+        "direct_execute": 6.44327526858627e-05,
+        "ask_human": 1.4055265718186258e-07,
+        "refuse": 6.457330534300357e-05
+      }
+    },
+    {
+      "dataset_idx": 541,
+      "coalition": [
+        "tool",
+        "tool_args"
+      ],
+      "kind": "partial",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "ask_human": 0.005198989332214221,
+          "direct_execute": 0.9907520337046775,
+          "refuse": 0.0040489769631083155
+        },
+        {
+          "ask_human": 0.006653553527682083,
+          "direct_execute": 0.9874747060929577,
+          "refuse": 0.0058717403793602475
+        },
+        {
+          "ask_human": 0.005883982977460866,
+          "direct_execute": 0.9895335664721138,
+          "refuse": 0.004582450550425339
+        }
+      ],
+      "max_abs_diff": 0.003277327611719727,
+      "std": {
+        "direct_execute": 0.0013525467637111885,
+        "ask_human": 0.0005941578657163192,
+        "refuse": 0.000765167287663025
+      }
+    },
+    {
+      "dataset_idx": 444,
+      "coalition": [
+        "user_task",
+        "service",
+        "tool",
+        "tool_args",
+        "description",
+        "user_memory"
+      ],
+      "kind": "full",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "ask_human": 0.9978743618220715,
+          "direct_execute": 0.0006253945773478372,
+          "refuse": 0.001500243600580722
+        },
+        {
+          "ask_human": 0.9978743618220715,
+          "direct_execute": 0.0006253945773478372,
+          "refuse": 0.001500243600580722
+        },
+        {
+          "ask_human": 0.9978743618220715,
+          "direct_execute": 0.0006253945773478372,
+          "refuse": 0.001500243600580722
+        },
+        {
+          "ask_human": 0.9980503018524053,
+          "direct_execute": 0.0006255046959266513,
+          "refuse": 0.001324193451668027
+        },
+        {
+          "ask_human": 0.9981236621954764,
+          "direct_execute": 0.0005520466749262585,
+          "refuse": 0.0013242911295972873
+        }
+      ],
+      "max_abs_diff": 0.00024930037340498146,
+      "std": {
+        "direct_execute": 2.9350203812944578e-05,
+        "ask_human": 0.00010671428232372939,
+        "refuse": 8.622268621959149e-05
+      }
+    },
+    {
+      "dataset_idx": 444,
+      "coalition": [
+        "user_task",
+        "service",
+        "tool",
+        "description"
+      ],
+      "kind": "partial",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "ask_human": 0.9968212102062853,
+          "direct_execute": 0.0007079169283567363,
+          "refuse": 0.002470872865357953
+        },
+        {
+          "ask_human": 0.996293116375494,
+          "direct_execute": 0.0009085016217922024,
+          "refuse": 0.002798382002713699
+        },
+        {
+          "ask_human": 0.9967272608623612,
+          "direct_execute": 0.0008020993145270245,
+          "refuse": 0.002470639823111744
+        }
+      ],
+      "max_abs_diff": 0.0005280938307913319,
+      "std": {
+        "direct_execute": 8.193899634394858e-05,
+        "ask_human": 0.00023002198175652968,
+        "refuse": 0.00015444424583735836
+      }
+    },
+    {
+      "dataset_idx": 444,
+      "coalition": [
+        "user_task",
+        "tool",
+        "tool_args"
+      ],
+      "kind": "partial",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "ask_human": 0.9980124238015545,
+          "direct_execute": 0.0004871251386975859,
+          "refuse": 0.001500451059747837
+        },
+        {
+          "ask_human": 0.9978130778452825,
+          "direct_execute": 0.00048702786745572906,
+          "refuse": 0.0016998942872617632
+        },
+        {
+          "ask_human": 0.9980124238015545,
+          "direct_execute": 0.0004871251386975859,
+          "refuse": 0.001500451059747837
+        }
+      ],
+      "max_abs_diff": 0.0001994432275139262,
+      "std": {
+        "direct_execute": 4.585410315427139e-08,
+        "ask_human": 9.397258498804317e-05,
+        "refuse": 9.40184390912191e-05
+      }
+    },
+    {
+      "dataset_idx": 1075,
+      "coalition": [
+        "user_task",
+        "user_memory",
+        "service",
+        "prior_steps",
+        "tool",
+        "tool_args",
+        "description"
+      ],
+      "kind": "full",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "ask_human": 0.26439570676426033,
+          "direct_execute": 0.016902248015864554,
+          "refuse": 0.7187020452198751
+        },
+        {
+          "ask_human": 0.26439570676426033,
+          "direct_execute": 0.016902248015864554,
+          "refuse": 0.7187020452198751
+        },
+        {
+          "ask_human": 0.2643957118946171,
+          "direct_execute": 0.016902250358742345,
+          "refuse": 0.7187020377466405
+        },
+        {
+          "ask_human": 0.2413043095251226,
+          "direct_execute": 0.01542606840790244,
+          "refuse": 0.7432696220669749
+        },
+        {
+          "ask_human": 0.2643957118946171,
+          "direct_execute": 0.016902250358742345,
+          "refuse": 0.7187020377466405
+        }
+      ],
+      "max_abs_diff": 0.024567584320334346,
+      "std": {
+        "direct_execute": 0.0005904723117613334,
+        "ask_human": 0.009236559921726725,
+        "refuse": 0.009827032233487389
+      }
+    },
+    {
+      "dataset_idx": 1075,
+      "coalition": [
+        "user_task",
+        "service",
+        "prior_steps",
+        "tool",
+        "tool_args"
+      ],
+      "kind": "partial",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "ask_human": 0.5157528856757332,
+          "direct_execute": 0.02909679021636537,
+          "refuse": 0.4551503241079014
+        },
+        {
+          "ask_human": 0.5448947129173695,
+          "direct_execute": 0.03074085797111489,
+          "refuse": 0.4243644291115157
+        },
+        {
+          "ask_human": 0.5175222767630169,
+          "direct_execute": 0.02576591697509293,
+          "refuse": 0.4567118062618902
+        }
+      ],
+      "max_abs_diff": 0.0323473771503745,
+      "std": {
+        "direct_execute": 0.0020695601584644844,
+        "ask_human": 0.013340111197376136,
+        "refuse": 0.014894303033763852
+      }
+    },
+    {
+      "dataset_idx": 1075,
+      "coalition": [
+        "service",
+        "tool",
+        "tool_args"
+      ],
+      "kind": "partial",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "ask_human": 0.9706328603796248,
+          "direct_execute": 0.003500648119049671,
+          "refuse": 0.02586649150132549
+        },
+        {
+          "ask_human": 0.9600771149068237,
+          "direct_execute": 0.0026966593882972716,
+          "refuse": 0.0372262257048791
+        },
+        {
+          "ask_human": 0.9706328582952557,
+          "direct_execute": 0.003500649102643117,
+          "refuse": 0.02586649260210123
+        }
+      ],
+      "max_abs_diff": 0.011359734203553611,
+      "std": {
+        "direct_execute": 0.00037900415417713585,
+        "ask_human": 0.004976025644907481,
+        "refuse": 0.005355029799084371
+      }
+    }
+  ]
+}

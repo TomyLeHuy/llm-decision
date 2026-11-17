@@ -1,7 +1,5 @@
 # XAI pilot: field-level Shapley values for the delegation gate
 
-*Tomy Le, 11 November 2026. Pilot run on 10 November 2026.*
-
 ## 1. Goal
 
 Following our call on 10 November, the first XAI step is **SHAP with summary plots**. This pilot answers two questions:
@@ -12,7 +10,7 @@ Following our call on 10 November, the first XAI step is **SHAP with summary plo
 These steps come later and are **not** part of this pilot:
 - calibration
 - conformal "uncertainty profiles" (SHAP per set size 1/2/3)
-- the other four models
+- the other two models of the gate (jev, microsoft)
 - counterfactuals
 
 ## 2. Setup
@@ -63,7 +61,7 @@ Each field is one Shapley "player". The system policy and the decision questions
 - **Payoff is user-defined.** We use gpt's class probability; prediction entropy would also work later.
 - **Exact computation.** `FullEnumerationSampler` enumerates all subsets, which is feasible with ≤6 players. Approximate samplers (stratified, sliding window, counterfactual) are available if the player count grows.
 - **Fixed fields are supported.** `permanent_keys` keeps the fixed parts (tool name, or the whole tool call) in every subset, including the baseline. This is exactly what the refusal problem required.
-- **Robust for non-deterministic models.** gpt is deterministic, but the other four models may not be. The cache keeps the values consistent for them as well.
+- **Robust for non-deterministic models.** gpt is deterministic, but jev and microsoft may not be. The cache keeps the values consistent for them as well.
 
 **Division of work between llmSHAP and our code.**
 
@@ -221,7 +219,117 @@ In several refuse-labelled calls, the `description` of the proposed tool call st
 
 An agent would rarely describe its own action like this. This may make refusal easier than in realistic use, and it explains the high φ of `description` for refuse.
 
-## 6. Limitations
+## 6. Five-model comparison
+
+*Run on 11 November 2026.* The same 30 calls and the same two designs were run for the other four decision models:
+jev (`typesafe/jev-1.14`), microsoft (`microsoft/microsoft-decision-1`), liquid (`liquid/d1-ultra`) and pplx
+(`perplexity/pplx-decider-v1.2`). All numbers in this section are descriptive (n = 30 calls, no confidence intervals).
+They come from `results/compare/` (`src/compare.py`) and the per-model `checks*.json`.
+
+### 6.1 What changed in the method
+
+- **Determinism probe first.** Per model: the full input of the 3 pilot calls 5×, plus 2 random partial inputs per
+  call 3× each (33 queries). Unlike gpt, none of the four is deterministic. The max difference between repeated
+  answers was 0.03 (jev), 0.032 (microsoft), 0.27 (liquid) and 0.051 (pplx).
+- **Payoff = mean of 3 answers.** For these models every subset was queried 3 times, and v(S) is the mean. The mean
+  is computed once from the cache and reused everywhere, so the Shapley axioms still hold. The 3 raw answers and
+  their standard deviation are kept, so we can say which φ are smaller than the answer noise.
+- **The 7-player design works for the four other models.** They answered every input, including the empty one and
+  all subsets without a tool-call field. Only gpt refuses. So for them the 7-player design is a third view, and the
+  two fixed designs were run as well (entirely from the same cache) for comparability with gpt.
+
+### 6.2 Key numbers per model
+
+| | gpt | jev | microsoft | liquid | pplx |
+|---|---|---|---|---|---|
+| deterministic | yes | no | no | no | no |
+| answers per subset | 1 | 3 | 3 | 3 | 3 |
+| refusals of the provider | 11 requests | 0 | 0 | 0 | 0 |
+| 7-player design defined | no | yes | yes | yes | yes |
+| complete calls: main / second view / 7-player | 29 / 30 / – | 30 / 30 / 30 | 30 / 30 / 30 | 30 / 30 / 30 | 30 / 30 / 30 |
+| full input vs October scores: max / mean diff | 0.0 / 0.0 | 0.060 / 0.010 | **0.745 / 0.113** | 0.124 / 0.019 | 0.061 / 0.006 |
+| answer noise: mean std | – | 0.011 | 0.008 | 0.030 | 0.004 |
+| share of \|φ\| below that noise (main; exec / ask / refuse) | – | 42 / 37 / 57% | 24 / 18 / 39% | 45 / 46 / 59% | 8 / 12 / 22% |
+| cost (USD) | 0.13 | 0.37 | 0.30 | 0.28 | 0.14 |
+
+All quality checks of section 4 pass for every model and design: byte-identical round trip (30/30), efficiency
+error ≤ 2.2e-16, own exact Shapley vs llmSHAP max difference 0.0, llmSHAP baseline and full value vs cache 0.0.
+
+**microsoft has changed since October.** On the full input it differs from the October scores by up to 0.74 (mean
+0.11), much more than its answer noise (0.008), while the API still reports the same version string
+(`microsoft-decision-1-20261009`). Its φ explain today's model, not the one scored for the paper.
+
+### 6.3 Global importance across models (main design)
+
+![Mean |phi| per field and model, main design](plots/compare/mean_abs_phi__fixed-tool.png)
+
+- **user_task is the strongest field for P(refuse) in all five models** (mean |φ| 0.10–0.17).
+- **jev and microsoft rely much more on tool_args.** Mean |φ| on P(ask) is 0.196 (jev) and 0.319 (microsoft),
+  against 0.09–0.10 for gpt, liquid and pplx. It is their top field for execute and ask.
+- **service barely matters in any model** (mean |φ| ≤ 0.04).
+
+Second view (whole tool call fixed):
+
+![Mean |phi| per field and model, second view](plots/compare/mean_abs_phi__fixed-description+tool+tool_args.png)
+
+### 6.4 Direction of the effects on the label's own class
+
+![Mean phi on the own class, main design](plots/compare/mean_phi_own_class__fixed-tool.png)
+
+| Field (main design) | gpt | jev | microsoft | liquid | pplx |
+|---|---|---|---|---|---|
+| **refuse-labelled, φ on P(refuse):** user_task | +0.343 | +0.161 | +0.188 | +0.225 | +0.203 |
+| description | +0.189 | +0.188 | +0.195 | +0.170 | +0.174 |
+| user_memory | +0.079 | +0.125 | +0.105 | +0.117 | +0.129 |
+| **execute-labelled, φ on P(execute):** tool_args | +0.074 | +0.272 | +0.349 | +0.172 | +0.141 |
+| prior_steps | +0.086 | −0.178 | −0.262 | +0.011 | −0.029 |
+| user_memory | +0.082 | +0.078 | +0.055 | +0.077 | +0.101 |
+
+- **description pushes towards refuse equally in all five models** (+0.17 to +0.20). This fits the possible label
+  leakage in section 5.4: it is a property of the data, not of one model.
+- **gpt relies most on the task text for refusals** (+0.34, against +0.16 to +0.23). In the second view, with the
+  whole tool call fixed, user_task adds almost nothing to P(refuse) for the other four (−0.01 to +0.03), but still
+  +0.15 for gpt.
+- **prior_steps changes sign between models.** For execute-labelled calls it raises P(execute) in gpt (+0.09) but
+  lowers it in jev (−0.18) and microsoft (−0.26). The same history makes some models more and others less willing to
+  execute.
+
+![Mean phi on the own class, second view](plots/compare/mean_phi_own_class__fixed-description+tool+tool_args.png)
+
+**Baselines on the label's own class (main design, mean over calls).** v(∅) = only the tool name; v(full) = full
+input.
+
+| | gpt | jev | microsoft | liquid | pplx |
+|---|---|---|---|---|---|
+| execute-labelled: P(execute), v(∅) → v(full) | 0.62 → 0.83 | 0.41 → 0.72 | 0.39 → 0.77 | 0.59 → 0.84 | 0.59 → 0.90 |
+| ask-labelled: P(ask), v(∅) → v(full) | 0.44 → 0.51 | 0.74 → 0.60 | 0.73 → 0.54 | 0.43 → 0.39 | 0.54 → 0.49 |
+| refuse-labelled: P(refuse), v(∅) → v(full) | 0.18 → 0.73 | 0.12 → 0.57 | 0.14 → 0.70 | 0.21 → 0.79 | 0.15 → 0.62 |
+
+With only the tool name, jev and microsoft lean towards "ask" (about 0.74 for ask-labelled calls). For them, the
+context mostly moves calls away from "ask"; gpt, liquid and pplx start lower and move less.
+
+### 6.5 How similar are the explanations?
+
+![Agreement between models, main design](plots/compare/agreement__fixed-tool.png)
+
+For each pair of models and each call, I correlated the φ vectors (Spearman) and checked whether both name the same
+top field.
+
+- **gpt is the outlier.** Main design: pairs with gpt have a mean of median correlations of 0.53 and the same top
+  field in 50% of calls. Pairs without gpt reach 0.66 and 63%. Second view: 0.62 vs 0.82.
+- **The most similar pairs are jev–microsoft** (median ρ 0.83 / 0.79 / 0.70 for execute / ask / refuse) **and
+  liquid–pplx** (0.77 / 0.68 / 0.80).
+
+### 6.6 What this means
+
+- The pipeline transfers to all five models without changes to the design; only gpt needs the fixed tool name.
+- For non-deterministic models, many small φ lie within the answer noise (37–59% of all φ for jev and liquid in the
+  main design, 8–39% for pplx and microsoft). Only
+  the larger effects in the plots should be read as signal; more repeats would be needed for the small ones.
+- Model drift (microsoft) affects explanations as much as scores: φ must be computed on the model version that the
+  gate actually uses.
+
+## 7. Limitations
 
 - 30 calls, single-step only, gpt only. All patterns are descriptive.
 - φ explains **what gpt does, not whether it is correct**. Several calls are misclassified (e.g. 1365, labelled ask_human, gets P(execute) = 1.0), and their φ describe that wrong decision.
@@ -230,13 +338,13 @@ An agent would rarely describe its own action like this. This may make refusal e
 - Excluding the 3 calls that gpt already refused in October, and dropping call 519, biases the sample slightly towards inputs gpt accepts.
 - Determinism was re-checked directly on 3 calls. The other 27 rely on the exact match with the October scores.
 
-## 7. Planned next steps
+## 8. Planned next steps
 
 1. **Scale up:** all ≈1,300 single-step test calls for gpt, main design. Estimated ≈50k requests, ≈USD 4–5.
 2. **Calibration + conformal sets** on the full-input scores. Then **uncertainty profiles**: separate summary plots for calls with set size 1, 2 and 3.
 3. Optionally, **entropy of the prediction as the payoff**. This explains which fields make gpt uncertain, not only which class it picks.
 4. Multi-step calls after re-scoring with the bug fix.
-5. The other four models, with the 4-player design (whole tool call fixed), since their refusal behaviour differs.
+5. The other two models (jev, microsoft) on the same 30 calls and the same designs, so the explanations can be compared across models.
 
 **Questions for you:**
 - Is the main design ("tool name fixed") the right baseline, or should the second view be the main one?

@@ -40,7 +40,7 @@ def _fields(df):
     return [f for f in ALL_FIELDS if f in set(df.field)]
 
 
-def beeswarm(df, cls, sfx, design):
+def beeswarm(df, cls, sfx, design, out_dir=PLOTS, who="gpt"):
     d = df[(df["class"] == cls) & (df.status == "ok")]
     fields = _fields(d)
     n_calls = d.dataset_idx.nunique()
@@ -64,7 +64,7 @@ def beeswarm(df, cls, sfx, design):
     for s in ("top", "right", "left"):
         ax.spines[s].set_visible(False)
     ax.tick_params(axis="y", length=0)
-    fig.suptitle(f"Field Shapley values for {CLASS_TITLE[cls]} — gpt, {design}", x=0.02, ha="left", fontsize=11,
+    fig.suptitle(f"Field Shapley values for {CLASS_TITLE[cls]} — {who}, {design}", x=0.02, ha="left", fontsize=11,
                  fontweight="bold")
     ax.set_title(f"{n_calls} calls, one dot per call, colour/shape = true label"
                  + (f"\n{n_undef} call(s) undefined (provider refusal) left out" if n_undef else ""),
@@ -73,12 +73,12 @@ def beeswarm(df, cls, sfx, design):
                     fontsize=9, title_fontsize=9)
     leg.get_title().set_color(INK2)
     fig.tight_layout()
-    path = PLOTS / f"beeswarm_{cls}{sfx}.png"
+    path = out_dir / f"beeswarm_{cls}{sfx}.png"
     fig.savefig(path, dpi=160); plt.close(fig)
     return path
 
 
-def mean_abs(df, sfx, design):
+def mean_abs(df, sfx, design, out_dir=PLOTS, who="gpt"):
     d = df[df.status == "ok"]
     fields = _fields(d)
     m = d.assign(a=d.phi.abs()).groupby(["class", "field"]).a.mean()
@@ -100,18 +100,20 @@ def mean_abs(df, sfx, design):
     axes[0].set_yticks(range(len(fields)))
     axes[0].set_yticklabels(fields)
     axes[0].invert_yaxis()
-    fig.suptitle(f"Mean |φ| per field and class — gpt, {design}, {d.dataset_idx.nunique()} calls "
+    fig.suptitle(f"Mean |φ| per field and class — {who}, {design}, {d.dataset_idx.nunique()} calls "
                  "(mean over calls where the field is present)", x=0.02, ha="left", fontsize=11, fontweight="bold")
     fig.tight_layout()
-    path = PLOTS / f"mean_abs_phi{sfx}.png"
+    path = out_dir / f"mean_abs_phi{sfx}.png"
     fig.savefig(path, dpi=160); plt.close(fig)
     return path
 
 
-def make_all(df, sfx):
-    PLOTS.mkdir(exist_ok=True)
+def make_all(df, sfx, out_dir=PLOTS, who="gpt"):
+    if not (df.status == "ok").any():
+        print("plots skipped: no complete call in this design"); return
+    out_dir.mkdir(parents=True, exist_ok=True)
     design = {"__fixed-tool": "tool fixed (main design)",
               "__fixed-description+tool+tool_args": "whole tool call fixed"}.get(sfx, sfx or "7 players")
-    paths = [beeswarm(df, c, sfx, design) for c in CLASSES] + [mean_abs(df, sfx, design)]
+    paths = [beeswarm(df, c, sfx, design, out_dir, who) for c in CLASSES] + [mean_abs(df, sfx, design, out_dir, who)]
     for p in paths:
         print(f"plot: {p}")

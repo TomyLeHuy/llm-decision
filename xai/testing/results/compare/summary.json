@@ -1,0 +1,175 @@
+{
+  "__fixed-tool": {
+    "models": [
+      "gpt",
+      "jev",
+      "microsoft",
+      "liquid",
+      "pplx"
+    ],
+    "complete_calls": {
+      "gpt": 29,
+      "jev": 30,
+      "liquid": 30,
+      "microsoft": 30,
+      "pplx": 30
+    },
+    "top_field_by_mean_abs_phi": {
+      "direct_execute": {
+        "gpt": "tool_args",
+        "jev": "tool_args",
+        "microsoft": "tool_args",
+        "liquid": "prior_steps",
+        "pplx": "user_task"
+      },
+      "ask_human": {
+        "gpt": "user_task",
+        "jev": "tool_args",
+        "microsoft": "tool_args",
+        "liquid": "prior_steps",
+        "pplx": "user_task"
+      },
+      "refuse": {
+        "gpt": "user_task",
+        "jev": "user_task",
+        "microsoft": "user_task",
+        "liquid": "user_task",
+        "pplx": "user_task"
+      }
+    },
+    "agreement_median_spearman_by_class": {
+      "ask_human": 0.5607142857142857,
+      "direct_execute": 0.6000000000000001,
+      "refuse": 0.6392857142857143
+    },
+    "agreement_same_top_by_class": {
+      "ask_human": 0.5465517241379311,
+      "direct_execute": 0.5996551724137931,
+      "refuse": 0.5872413793103448
+    },
+    "agreement_pairs_with_gpt_vs_without": {
+      "with_gpt": {
+        "mean_of_median_spearman": 0.5285714285714286,
+        "mean_share_same_top_field": 0.5028735632183907,
+        "n_pair_class_rows": 12
+      },
+      "without_gpt": {
+        "mean_of_median_spearman": 0.6571486369666002,
+        "mean_share_same_top_field": 0.6277777777777778,
+        "n_pair_class_rows": 18
+      }
+    }
+  },
+  "__fixed-description+tool+tool_args": {
+    "models": [
+      "gpt",
+      "jev",
+      "microsoft",
+      "liquid",
+      "pplx"
+    ],
+    "complete_calls": {
+      "gpt": 30,
+      "jev": 30,
+      "liquid": 30,
+      "microsoft": 30,
+      "pplx": 30
+    },
+    "top_field_by_mean_abs_phi": {
+      "direct_execute": {
+        "gpt": "prior_steps",
+        "jev": "prior_steps",
+        "microsoft": "prior_steps",
+        "liquid": "user_task",
+        "pplx": "user_task"
+      },
+      "ask_human": {
+        "gpt": "user_memory",
+        "jev": "prior_steps",
+        "microsoft": "prior_steps",
+        "liquid": "prior_steps",
+        "pplx": "user_memory"
+      },
+      "refuse": {
+        "gpt": "user_task",
+        "jev": "user_task",
+        "microsoft": "prior_steps",
+        "liquid": "user_task",
+        "pplx": "user_task"
+      }
+    },
+    "agreement_median_spearman_by_class": {
+      "ask_human": 0.6499999999999999,
+      "direct_execute": 0.7249999999999999,
+      "refuse": 0.95
+    },
+    "agreement_same_top_by_class": {
+      "ask_human": 0.6366666666666666,
+      "direct_execute": 0.6266666666666667,
+      "refuse": 0.67
+    },
+    "agreement_pairs_with_gpt_vs_without": {
+      "with_gpt": {
+        "mean_of_median_spearman": 0.6208333333333332,
+        "mean_share_same_top_field": 0.6333333333333333,
+        "n_pair_class_rows": 12
+      },
+      "without_gpt": {
+        "mean_of_median_spearman": 0.8175569668769131,
+        "mean_share_same_top_field": 0.6518518518518518,
+        "n_pair_class_rows": 18
+      }
+    }
+  },
+  "__7player": {
+    "models": [
+      "jev",
+      "microsoft",
+      "liquid",
+      "pplx"
+    ],
+    "complete_calls": {
+      "jev": 30,
+      "liquid": 30,
+      "microsoft": 30,
+      "pplx": 30
+    },
+    "top_field_by_mean_abs_phi": {
+      "direct_execute": {
+        "jev": "tool_args",
+        "microsoft": "tool_args",
+        "liquid": "user_task",
+        "pplx": "user_task"
+      },
+      "ask_human": {
+        "jev": "tool_args",
+        "microsoft": "tool_args",
+        "liquid": "user_task",
+        "pplx": "description"
+      },
+      "refuse": {
+        "jev": "user_task",
+        "microsoft": "user_task",
+        "liquid": "user_task",
+        "pplx": "user_task"
+      }
+    },
+    "agreement_median_spearman_by_class": {
+      "ask_human": 0.6214285714285714,
+      "direct_execute": 0.675650053642409,
+      "refuse": 0.7071428571428571
+    },
+    "agreement_same_top_by_class": {
+      "ask_human": 0.5166666666666667,
+      "direct_execute": 0.6055555555555555,
+      "refuse": 0.5333333333333333
+    },
+    "agreement_pairs_with_gpt_vs_without": {
+      "without_gpt": {
+        "mean_of_median_spearman": 0.673683339293601,
+        "mean_share_same_top_field": 0.5518518518518518,
+        "n_pair_class_rows": 18
+      }
+    }
+  }
+}

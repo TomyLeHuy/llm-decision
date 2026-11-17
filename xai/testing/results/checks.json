@@ -223,5 +223,35 @@
       "pred_full": "ask_human"
     }
   ],
-  "finding_7_player_design": "With all 7 fields as players, gpt refuses (HTTP 502 'OpenAI refused to answer question') the empty coalition of every pilot call and other coalitions that contain no tool-call field (tool, tool_args, description); v(empty) is therefore undefined and no call has Shapley values. Evaluated on the 3 pilot calls only; the designs with tool / the whole tool call fixed are the ones run on all 30 calls."
+  "finding_7_player_design": "With all 7 fields as players, gpt refuses (HTTP 502 'OpenAI refused to answer question') the empty coalition of every pilot call and other coalitions that contain no tool-call field (tool, tool_args, description); v(empty) is therefore undefined and no call has Shapley values. Evaluated on the 3 pilot calls only; the designs with tool / the whole tool call fixed are the ones run on all 30 calls.",
+  "repeats": 1,
+  "agreement_with_october_mean_abs_diff": 0.0,
+  "october_failed_calls_undefined": [],
+  "failure_types_in_cache": {
+    "http_502_refused_to_answer": {
+      "count": 11,
+      "example": "HTTP 502: {\"error\":{\"message\":\"OpenAI refused to answer question \\\"safety_decision\\\"\",\"code\":502}}"
+    }
+  },
+  "seven_player_pilot": {
+    "empty_coalition": [
+      {
+        "dataset_idx": 541,
+        "status": "provider_refusal"
+      },
+      {
+        "dataset_idx": 444,
+        "status": "provider_refusal"
+      },
+      {
+        "dataset_idx": 1075,
+        "status": "provider_refusal"
+      }
+    ],
+    "coalitions_without_tool_call_field": {
+      "provider_refusal": 12,
+      "ok": 16
+    },
+    "defined_for_all_calls": false
+  }
 }

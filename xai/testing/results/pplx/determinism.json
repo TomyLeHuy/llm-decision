@@ -1,0 +1,396 @@
+{
+  "model": "perplexity/pplx-decider-v1.2",
+  "queried_at": "2026-11-11T10:22:48+00:00",
+  "n_inputs": 9,
+  "n_queries": 33,
+  "n_http": 33,
+  "billed_cost_usd": 0.0006378200000000001,
+  "max_abs_diff": 0.05116703194794875,
+  "mean_std_per_class_and_input": 0.002871956707219177,
+  "n_inputs_with_mixed_status": 0,
+  "deterministic": false,
+  "failure_types": {},
+  "inputs": [
+    {
+      "dataset_idx": 541,
+      "coalition": [
+        "user_task",
+        "service",
+        "tool",
+        "tool_args",
+        "description"
+      ],
+      "kind": "full",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "direct_execute": 0.9873569777211813,
+          "ask_human": 0.01106713052963709,
+          "refuse": 0.0015758917491817735
+        },
+        {
+          "direct_execute": 0.9883020242450669,
+          "ask_human": 0.00971904910630595,
+          "refuse": 0.001978926648627121
+        },
+        {
+          "direct_execute": 0.9883020242450669,
+          "ask_human": 0.00971904910630595,
+          "refuse": 0.001978926648627121
+        },
+        {
+          "direct_execute": 0.9906672777248742,
+          "ask_human": 0.007572141619974277,
+          "refuse": 0.0017605806551516615
+        },
+        {
+          "direct_execute": 0.9906672777248742,
+          "ask_human": 0.007572141619974277,
+          "refuse": 0.0017605806551516615
+        }
+      ],
+      "max_abs_diff": 0.003494988909662814,
+      "std": {
+        "direct_execute": 0.0013576464074047815,
+        "ask_human": 0.0013638385391923943,
+        "refuse": 0.00015281284445827092
+      }
+    },
+    {
+      "dataset_idx": 541,
+      "coalition": [
+        "user_task",
+        "service",
+        "tool",
+        "tool_args"
+      ],
+      "kind": "partial",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "direct_execute": 0.9870611920274659,
+          "ask_human": 0.010748630034387011,
+          "refuse": 0.0021901779381470264
+        },
+        {
+          "direct_execute": 0.9870611920274659,
+          "ask_human": 0.010748630034387011,
+          "refuse": 0.0021901779381470264
+        },
+        {
+          "direct_execute": 0.9870612214459664,
+          "ask_human": 0.010748604728039367,
+          "refuse": 0.0021901738259943386
+        }
+      ],
+      "max_abs_diff": 2.9418500524514002e-08,
+      "std": {
+        "direct_execute": 1.3868014142149238e-08,
+        "ask_human": 1.1929526684162866e-08,
+        "refuse": 1.938487367215401e-09
+      }
+    },
+    {
+      "dataset_idx": 541,
+      "coalition": [
+        "tool",
+        "tool_args"
+      ],
+      "kind": "partial",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "direct_execute": 0.9912240882632084,
+          "ask_human": 0.007690539417145677,
+          "refuse": 0.0010853723196460798
+        },
+        {
+          "direct_execute": 0.9922015057949709,
+          "ask_human": 0.006290831401040297,
+          "refuse": 0.001507662803988834
+        },
+        {
+          "direct_execute": 0.9922015057949709,
+          "ask_human": 0.006290831401040297,
+          "refuse": 0.001507662803988834
+        }
+      ],
+      "max_abs_diff": 0.0013997080161053804,
+      "std": {
+        "direct_execute": 0.00046075904317325586,
+        "ask_human": 0.0006598286865795225,
+        "refuse": 0.00019906964340620867
+      }
+    },
+    {
+      "dataset_idx": 444,
+      "coalition": [
+        "user_task",
+        "service",
+        "tool",
+        "tool_args",
+        "description",
+        "user_memory"
+      ],
+      "kind": "full",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "direct_execute": 0.02575972393804463,
+          "ask_human": 0.9357779335271866,
+          "refuse": 0.038462342534768774
+        },
+        {
+          "direct_execute": 0.03900753735756529,
+          "ask_human": 0.9297480652462546,
+          "refuse": 0.031244397396180013
+        },
+        {
+          "direct_execute": 0.032834256173893274,
+          "ask_human": 0.9254979565222683,
+          "refuse": 0.041667787303838515
+        },
+        {
+          "direct_execute": 0.032834256173893274,
+          "ask_human": 0.9254979565222683,
+          "refuse": 0.041667787303838515
+        },
+        {
+          "direct_execute": 0.032834256173893274,
+          "ask_human": 0.9254979565222683,
+          "refuse": 0.041667787303838515
+        }
+      ],
+      "max_abs_diff": 0.013247813419520662,
+      "std": {
+        "direct_execute": 0.004195139002153104,
+        "ask_human": 0.004037738801098723,
+        "refuse": 0.004044079781743076
+      }
+    },
+    {
+      "dataset_idx": 444,
+      "coalition": [
+        "user_task",
+        "service",
+        "tool",
+        "description"
+      ],
+      "kind": "partial",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "direct_execute": 0.00400830412895989,
+          "ask_human": 0.9387326248391233,
+          "refuse": 0.05725907103191674
+        },
+        {
+          "direct_execute": 0.00400830412895989,
+          "ask_human": 0.9387326248391233,
+          "refuse": 0.05725907103191674
+        },
+        {
+          "direct_execute": 0.0037103335619421904,
+          "ask_human": 0.9439720365612777,
+          "refuse": 0.05231762987678018
+        }
+      ],
+      "max_abs_diff": 0.0052394117221543635,
+      "std": {
+        "direct_execute": 0.00014046467235481085,
+        "ask_human": 0.002469882372109092,
+        "refuse": 0.0023294176997542327
+      }
+    },
+    {
+      "dataset_idx": 444,
+      "coalition": [
+        "user_task",
+        "tool",
+        "tool_args"
+      ],
+      "kind": "partial",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "direct_execute": 0.0033797091276386968,
+          "ask_human": 0.9572062792203705,
+          "refuse": 0.03941401165199076
+        },
+        {
+          "direct_execute": 0.00362856782036378,
+          "ask_human": 0.9561134103942828,
+          "refuse": 0.04025802178535346
+        },
+        {
+          "direct_execute": 0.0033797091276386968,
+          "ask_human": 0.9572062792203705,
+          "refuse": 0.03941401165199076
+        }
+      ],
+      "max_abs_diff": 0.0010928688260877228,
+      "std": {
+        "direct_execute": 0.00011731311278875047,
+        "ask_human": 0.0005151833052493403,
+        "refuse": 0.0003978701924606193
+      }
+    },
+    {
+      "dataset_idx": 1075,
+      "coalition": [
+        "user_task",
+        "user_memory",
+        "service",
+        "prior_steps",
+        "tool",
+        "tool_args",
+        "description"
+      ],
+      "kind": "full",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "direct_execute": 0.013680848486859628,
+          "ask_human": 0.6506300055398516,
+          "refuse": 0.33568914597328875
+        },
+        {
+          "direct_execute": 0.013680848486859628,
+          "ask_human": 0.6506300055398516,
+          "refuse": 0.33568914597328875
+        },
+        {
+          "direct_execute": 0.013680848486859628,
+          "ask_human": 0.6506300055398516,
+          "refuse": 0.33568914597328875
+        },
+        {
+          "direct_execute": 0.013680848486859628,
+          "ask_human": 0.6506300055398516,
+          "refuse": 0.33568914597328875
+        },
+        {
+          "direct_execute": 0.013680848486859628,
+          "ask_human": 0.6506300055398516,
+          "refuse": 0.33568914597328875
+        }
+      ],
+      "max_abs_diff": 0.0,
+      "std": {
+        "direct_execute": 0.0,
+        "ask_human": 0.0,
+        "refuse": 0.0
+      }
+    },
+    {
+      "dataset_idx": 1075,
+      "coalition": [
+        "user_task",
+        "service",
+        "prior_steps",
+        "tool",
+        "tool_args"
+      ],
+      "kind": "partial",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "direct_execute": 0.020215057429787832,
+          "ask_human": 0.7609834315982043,
+          "refuse": 0.2188015109720079
+        },
+        {
+          "direct_execute": 0.02236184410601532,
+          "ask_human": 0.7707776568767002,
+          "refuse": 0.20686049901728443
+        },
+        {
+          "direct_execute": 0.022144022085071227,
+          "ask_human": 0.7198284469496956,
+          "refuse": 0.2580275309652332
+        }
+      ],
+      "max_abs_diff": 0.05116703194794875,
+      "std": {
+        "direct_execute": 0.0009647707907044625,
+        "ask_human": 0.022074322947742028,
+        "refuse": 0.02185643452007813
+      }
+    },
+    {
+      "dataset_idx": 1075,
+      "coalition": [
+        "service",
+        "tool",
+        "tool_args"
+      ],
+      "kind": "partial",
+      "statuses": [
+        "ok",
+        "ok",
+        "ok"
+      ],
+      "probabilities": [
+        {
+          "direct_execute": 0.011222080364286794,
+          "ask_human": 0.910384460725173,
+          "refuse": 0.07839345891054034
+        },
+        {
+          "direct_execute": 0.0095468904773161,
+          "ask_human": 0.9212098034470803,
+          "refuse": 0.06924330607560371
+        },
+        {
+          "direct_execute": 0.0095468904773161,
+          "ask_human": 0.9212098034470803,
+          "refuse": 0.06924330607560371
+        }
+      ],
+      "max_abs_diff": 0.010825342721907272,
+      "std": {
+        "direct_execute": 0.0007896920859014024,
+        "ask_human": 0.00510311549821938,
+        "refuse": 0.004313423412318001
+      }
+    }
+  ]
+}

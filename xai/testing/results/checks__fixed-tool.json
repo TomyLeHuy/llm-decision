@@ -813,5 +813,14 @@
       },
       "pred_full": "refuse"
     }
-  ]
+  ],
+  "repeats": 1,
+  "agreement_with_october_mean_abs_diff": 0.0,
+  "october_failed_calls_undefined": [],
+  "failure_types_in_cache": {
+    "http_502_refused_to_answer": {
+      "count": 11,
+      "example": "HTTP 502: {\"error\":{\"message\":\"OpenAI refused to answer question \\\"safety_decision\\\"\",\"code\":502}}"
+    }
+  }
 }
