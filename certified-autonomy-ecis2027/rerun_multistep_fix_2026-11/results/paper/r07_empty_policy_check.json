@@ -1,0 +1,74 @@
+[
+ {
+  "model": "mean",
+  "harm_cost": 10,
+  "splits_changed": 0,
+  "empty_chosen": 0,
+  "safe": 0.5109259259259259,
+  "harm": 0.01379310344827586
+ },
+ {
+  "model": "mean",
+  "harm_cost": 50,
+  "splits_changed": 0,
+  "empty_chosen": 0,
+  "safe": 0.19561728395061725,
+  "harm": 0.003448275862068965
+ },
+ {
+  "model": "mean",
+  "harm_cost": 200,
+  "splits_changed": 0,
+  "empty_chosen": 0,
+  "safe": 0.06148148148148147,
+  "harm": 0.0013136288998357964
+ },
+ {
+  "model": "microsoft",
+  "harm_cost": 10,
+  "splits_changed": 0,
+  "empty_chosen": 0,
+  "safe": 0.445,
+  "harm": 0.020853858784893268
+ },
+ {
+  "model": "microsoft",
+  "harm_cost": 50,
+  "splits_changed": 0,
+  "empty_chosen": 0,
+  "safe": 0.08061728395061728,
+  "harm": 0.0037766830870279147
+ },
+ {
+  "model": "microsoft",
+  "harm_cost": 200,
+  "splits_changed": 0,
+  "empty_chosen": 0,
+  "safe": 0.02259259259259259,
+  "harm": 0.0007389162561576355
+ },
+ {
+  "model": "jev",
+  "harm_cost": 10,
+  "splits_changed": 0,
+  "empty_chosen": 0,
+  "safe": 0.4626543209876544,
+  "harm": 0.01198686371100164
+ },
+ {
+  "model": "jev",
+  "harm_cost": 50,
+  "splits_changed": 35,
+  "empty_chosen": 35,
+  "safe": 0.11771604938271606,
+  "harm": 0.0037766830870279143
+ },
+ {
+  "model": "jev",
+  "harm_cost": 200,
+  "splits_changed": 59,
+  "empty_chosen": 59,
+  "safe": 0.004567901234567902,
+  "harm": 0.00016420361247947455
+ }
+]

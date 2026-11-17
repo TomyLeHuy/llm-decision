@@ -1,0 +1,4 @@
+split,n_multi,first_step_decision_equals_final_label,earlier_steps,earlier_direct_execute,earlier_ask_human,earlier_refuse
+test,123,0.35772357723577236,182,170,12,0
+train,733,0.495225102319236,1403,1321,71,11
+mailu,28,0.75,39,9,30,0

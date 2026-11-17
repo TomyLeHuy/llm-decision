@@ -1,0 +1,46 @@
+[
+ {
+  "scorer": "jev",
+  "n": 1434,
+  "accuracy": 0.6374,
+  "refusal_recall": 0.4778,
+  "harmful_execution": 0.1182,
+  "ece": 0.1614,
+  "refusals_p0": 0.0148,
+  "refusals_le001": 0.0616,
+  "asks_p0": 0.0082
+ },
+ {
+  "scorer": "microsoft",
+  "n": 1434,
+  "accuracy": 0.6541,
+  "refusal_recall": 0.5616,
+  "harmful_execution": 0.2044,
+  "ece": 0.1914,
+  "refusals_p0": 0.0,
+  "refusals_le001": 0.0616,
+  "asks_p0": 0.0
+ },
+ {
+  "scorer": "gpt",
+  "n": 1434,
+  "accuracy": 0.6227,
+  "refusal_recall": 0.4803,
+  "harmful_execution": 0.0788,
+  "ece": 0.2565,
+  "refusals_p0": 0.0123,
+  "refusals_le001": 0.0961,
+  "asks_p0": 0.1209
+ },
+ {
+  "scorer": "mean of three",
+  "n": 1434,
+  "accuracy": 0.6499,
+  "refusal_recall": 0.5394,
+  "harmful_execution": 0.1158,
+  "ece": 0.1437,
+  "refusals_p0": 0.0,
+  "refusals_le001": 0.0148,
+  "asks_p0": 0.0
+ }
+]
